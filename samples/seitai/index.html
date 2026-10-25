@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【制作サンプル】からだ整え処 こもれび整体院</title>
+<meta name="description" content="Web集客パッケージの制作サンプルです。実在の店舗ではありません。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf7f1; --paper:#ffffff; --ink:#2f3a33; --sub:#5f6b63;
+    --green:#4f7d5c; --green-d:#3b6147; --green-l:#e6efe7;
+    --beige:#efe6d6; --line:#06c755; --accent:#d98f4e; --border:#e3ddd1;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans JP",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.8;font-size:16px;padding-bottom:72px}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;line-height:1.4}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  .sample-bar{background:#2f3a33;color:#fff;font-size:13px;text-align:center;padding:6px 12px}
+  header{position:sticky;top:0;z-index:20;background:rgba(250,247,241,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
+  .head{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:18px;text-decoration:none}
+  .logo small{display:block;font-size:11px;color:var(--sub);font-weight:500}
+  nav ul{display:flex;gap:22px;list-style:none;font-size:14px}
+  nav a{text-decoration:none;color:var(--sub)}
+  nav a:hover{color:var(--green)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 24px;font-weight:700;text-decoration:none;font-size:15px;border:0;cursor:pointer}
+  .btn-line{background:var(--line);color:#fff}
+  .btn-tel{background:var(--paper);color:var(--green-d);border:2px solid var(--green)}
+  .btn-web{background:var(--green);color:#fff;box-shadow:0 3px 0 var(--green-d)}
+  .btn-web::before{content:"";width:16px;height:16px;flex:none;border:2px solid #fff;border-radius:3px;border-top-width:5px}
+  .btn-sm{padding:8px 16px;font-size:13px}
+  .btn-sm.btn-web::before{width:13px;height:13px;border-top-width:4px}
+  @media (max-width:860px){nav ul{display:none}}
+  @media (max-width:400px){.head .btn-sm{padding:7px 12px;font-size:12px}}
+  /* hero */
+  .hero{padding:56px 0 64px;background:linear-gradient(160deg,var(--green-l) 0%,var(--bg) 60%)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .badge{display:inline-block;background:var(--paper);border:1px solid var(--border);border-radius:999px;padding:4px 14px;font-size:13px;color:var(--green-d);margin-bottom:16px}
+  .hero h1{font-size:clamp(28px,5vw,42px);margin-bottom:16px}
+  .hero h1 em{font-style:normal;color:var(--green)}
+  .hero p{color:var(--sub);margin-bottom:24px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+  .hero-note{margin-top:14px;font-size:13px;color:var(--sub)}
+  .hero-visual{aspect-ratio:4/5;border-radius:200px 200px var(--radius) var(--radius);background:linear-gradient(180deg,#cfe0d1,#9fbfa6);position:relative;overflow:hidden}
+  .hero-visual .ph{position:absolute;inset:auto 0 0 0;padding:14px;font-size:12px;color:#fff;background:rgba(47,58,51,.35);text-align:center}
+  @media (max-width:760px){.hero-grid{grid-template-columns:1fr}.hero-visual{aspect-ratio:16/10;border-radius:var(--radius)}}
+  /* sections */
+  section{padding:72px 0}
+  .sec-title{text-align:center;margin-bottom:40px}
+  .sec-title span{display:block;font-size:12px;letter-spacing:.2em;color:var(--green);font-weight:700}
+  .sec-title h2{font-size:clamp(22px,3.6vw,30px)}
+  .alt{background:var(--paper)}
+  .worries{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .worries li{list-style:none;background:var(--paper);border:1px solid var(--border);border-radius:12px;padding:16px 18px 16px 44px;position:relative}
+  .worries li::before{content:"";position:absolute;left:18px;top:24px;width:14px;height:14px;border-radius:4px;background:var(--green-l);border:2px solid var(--green)}
+  .worries-after{text-align:center;margin-top:28px;font-weight:700;font-size:18px}
+  @media (max-width:760px){.worries{grid-template-columns:1fr}}
+  .reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--bg);border-radius:var(--radius);padding:28px 24px}
+  .alt .card{background:var(--bg)}
+  .card .num{font-family:"Zen Maru Gothic",sans-serif;font-size:32px;color:var(--green);font-weight:700;line-height:1}
+  .card h3{font-size:19px;margin:10px 0 8px}
+  .card p{color:var(--sub);font-size:15px}
+  @media (max-width:760px){.reasons{grid-template-columns:1fr}}
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:f}
+  .flow li{list-style:none;background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);padding:22px 18px;counter-increment:f}
+  .flow li::before{content:"STEP " counter(f);display:block;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.1em}
+  .flow h3{font-size:17px;margin:4px 0 6px}
+  .flow p{font-size:14px;color:var(--sub)}
+  @media (max-width:860px){.flow{grid-template-columns:1fr 1fr}}
+  @media (max-width:520px){.flow{grid-template-columns:1fr}}
+  .menu-table{width:100%;border-collapse:collapse;background:var(--bg);border-radius:var(--radius);overflow:hidden}
+  .menu-table th,.menu-table td{padding:18px 20px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+  .menu-table th{width:65%;font-weight:700}
+  .menu-table th small{display:block;font-weight:400;color:var(--sub);font-size:13px}
+  .menu-table td{text-align:right;font-weight:700;white-space:nowrap}
+  .menu-table tr.first{background:#fff6ec}
+  .menu-table .tag{display:inline-block;background:var(--accent);color:#fff;font-size:11px;border-radius:4px;padding:1px 8px;margin-right:6px;vertical-align:2px}
+  .menu-note{font-size:13px;color:var(--sub);margin-top:12px}
+  .staff{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:center}
+  .staff-photo{aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,var(--beige),#d9c7a8);display:flex;align-items:center;justify-content:center;color:#8a7756;font-size:12px}
+  .staff h3{font-size:22px}
+  .staff .role{color:var(--green);font-weight:700;font-size:14px}
+  .staff p{margin-top:10px;color:var(--sub)}
+  @media (max-width:640px){.staff{grid-template-columns:1fr}.staff-photo{max-width:200px;margin:0 auto}}
+  .voices{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .voice{background:var(--paper);border-radius:var(--radius);padding:24px;border:1px solid var(--border)}
+  .voice .stars{color:#e0a43a;letter-spacing:2px}
+  .voice p{font-size:15px;margin:8px 0 12px}
+  .voice .who{font-size:13px;color:var(--sub)}
+  .voices-note{text-align:center;font-size:12px;color:var(--sub);margin-top:16px}
+  @media (max-width:760px){.voices{grid-template-columns:1fr}}
+  .faq details{background:var(--bg);border-radius:12px;margin-bottom:12px;padding:0 20px}
+  .faq summary{cursor:pointer;padding:18px 0;font-weight:700;list-style:none;position:relative;padding-right:28px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:0;top:14px;font-size:22px;color:var(--green)}
+  .faq details[open] summary::after{content:"−"}
+  .faq details p{padding:0 0 18px;color:var(--sub)}
+  .access{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .map{border-radius:var(--radius);background:repeating-linear-gradient(45deg,#e9e4d8 0 12px,#f1ece1 12px 24px);min-height:280px;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:14px;text-align:center;padding:20px}
+  .info dl{display:grid;grid-template-columns:96px 1fr;gap:10px 16px}
+  .info dt{font-weight:700;color:var(--green-d)}
+  .hours{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px;text-align:center}
+  .hours th,.hours td{border:1px solid var(--border);padding:8px 4px}
+  .hours thead th{background:var(--green-l)}
+  @media (max-width:760px){.access{grid-template-columns:1fr}}
+  .flow h3 small{display:block;font-size:12px;font-weight:500;color:var(--green-d);font-family:"Noto Sans JP",sans-serif}
+  /* after booking: LINE */
+  .after-line{display:grid;grid-template-columns:1fr 1.3fr;gap:28px;align-items:center;background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+  .after-line h3{font-size:20px;margin-bottom:6px}
+  .after-line p{color:var(--sub);font-size:15px}
+  .after-line ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .after-line li{background:#eefaf2;border-radius:12px;padding:14px 12px;font-size:14px;line-height:1.6;text-align:center}
+  .after-line li b{display:block;color:#078a3d;font-size:15px}
+  .after-line .opt{margin-top:12px;font-size:13px;color:var(--sub)}
+  .after-line .btn{margin-top:14px}
+  @media (max-width:760px){.after-line{grid-template-columns:1fr;padding:22px 18px}.after-line ul{grid-template-columns:1fr}.after-line li{text-align:left}}
+  /* reserve */
+  .reserve{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:start}
+  .booking{background:var(--paper);border:2px dashed #b9cdbd;border-radius:var(--radius);padding:22px;position:relative}
+  .booking-h{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 12px;margin-bottom:12px}
+  .booking-h h3{font-size:18px}
+  .booking-h span{font-size:12px;color:var(--sub)}
+  .slots{width:100%;border-collapse:collapse;text-align:center;font-size:14px;table-layout:fixed}
+  .slots th,.slots td{border:1px solid var(--border);padding:7px 2px;line-height:1.3}
+  .slots thead th{background:var(--green-l);font-weight:500;font-size:13px}
+  .slots thead th b{display:block;font-size:15px}
+  .slots tbody th{font-weight:500;font-size:12px;width:54px;background:var(--bg)}
+  .slots .o{color:var(--green);font-weight:700}
+  .slots .x{color:#b3b0a8}
+  .slots .c{background:#f3f1ec;color:#b3b0a8}
+  .booking-ph{margin-top:14px;background:var(--green-l);border-radius:10px;padding:12px 14px;font-size:13px;color:var(--green-d);text-align:center;font-weight:700}
+  .booking-note{font-size:12px;color:var(--sub);margin-top:8px}
+  .ways{display:grid;gap:14px}
+  .way{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px}
+  .way h3{font-size:17px;margin-bottom:4px}
+  .way p{font-size:14px;color:var(--sub);margin-bottom:10px}
+  .way .btn{width:100%}
+  .way.main{border:2px solid var(--green)}
+  @media (max-width:860px){.reserve{grid-template-columns:1fr}}
+  @media (max-width:420px){.booking{padding:16px 10px}.slots{font-size:13px}.slots tbody th{width:44px;font-size:11px}.slots thead th{font-size:11px}.slots thead th b{font-size:13px}}
+  .cta{background:var(--green);color:#fff;text-align:center;border-radius:24px;padding:48px 24px}
+  .cta h2{font-size:clamp(22px,3.6vw,30px);margin-bottom:10px}
+  .cta p{opacity:.9;margin-bottom:24px}
+  .cta .hero-cta{justify-content:center}
+  .cta .btn-tel{background:transparent;color:#fff;border-color:#fff}
+  .cta .btn-web{background:#fff;color:var(--green-d);box-shadow:0 3px 0 rgba(0,0,0,.18)}
+  .cta .btn-web::before{border-color:var(--green-d)}
+  .cta .sub-links{margin-top:14px;font-size:14px;opacity:.95}
+  .cta .sub-links a{color:#fff}
+  footer{padding:36px 0;text-align:center;font-size:13px;color:var(--sub)}
+  .fixed-bar{position:fixed;bottom:0;left:0;right:0;z-index:30;display:none;grid-template-columns:1fr 1.5fr;gap:8px;padding:8px;background:rgba(255,255,255,.96);border-top:1px solid var(--border)}
+  .fixed-bar .btn{padding:12px 8px}
+  @media (max-width:760px){.fixed-bar{display:grid}}
+  @media (min-width:761px){body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<div class="sample-bar">このページは「のきさき」の<strong>制作サンプル</strong>です。店名・住所・口コミはすべて架空です。</div>
+
+<header>
+  <div class="wrap head">
+    <a class="logo" href="#top">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="#4f7d5c"/><path d="M10 20c3-8 11-10 14-10-1 7-5 12-12 13" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span>こもれび整体院<small>からだ整え処</small></span>
+    </a>
+    <nav><ul>
+      <li><a href="#reason">選ばれる理由</a></li>
+      <li><a href="#menu">メニュー・料金</a></li>
+      <li><a href="#staff">院長紹介</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+      <li><a href="#access">アクセス</a></li>
+    </ul></nav>
+    <a class="btn btn-web btn-sm" href="#reserve">24時間ネット予約</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge">〇〇駅 徒歩4分・完全予約制</span>
+        <h1>デスクワークの<br><em>肩こり・腰痛</em>を、<br>根本から整える。</h1>
+        <p>痛いところだけを揉むのではなく、姿勢とからだの使い方から見直します。一人ひとりに60分しっかり向き合う、院長ひとりの小さな整体院です。</p>
+        <div class="hero-cta">
+          <a class="btn btn-web" href="#reserve">空き状況を見て予約する（24時間）</a>
+          <a class="btn btn-tel" href="tel:000-0000-0000">電話で予約する</a>
+        </div>
+        <p class="hero-note">初回限定 <strong>3,980円</strong>（通常6,600円）・夜20時まで施術<br>Googleマップの「予約」ボタンからも予約できます。</p>
+      </div>
+      <div class="hero-visual" role="img" aria-label="施術風景の写真が入ります">
+        <div class="ph">ここにお店の写真（施術風景・院内）が入ります</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-title"><span>WORRIES</span><h2>こんなお悩み、ありませんか？</h2></div>
+      <ul class="worries">
+        <li>夕方になると肩と首がガチガチになる</li>
+        <li>マッサージに行っても2〜3日で元に戻る</li>
+        <li>朝起きたときに腰が重い</li>
+        <li>頭痛や目の疲れがずっと続いている</li>
+        <li>猫背や反り腰が気になっている</li>
+        <li>どこに行けばいいか分からず我慢している</li>
+      </ul>
+      <p class="worries-after">ひとつでも当てはまったら、一度ご相談ください。</p>
+    </div>
+  </section>
+
+  <section class="alt" id="reason">
+    <div class="wrap">
+      <div class="sec-title"><span>REASON</span><h2>こもれび整体院が選ばれる3つの理由</h2></div>
+      <div class="reasons">
+        <div class="card"><div class="num">01</div><h3>原因を見つけてから施術</h3><p>最初の15分で姿勢と動きをチェック。どこが原因かを写真で見ながらご説明します。</p></div>
+        <div class="card"><div class="num">02</div><h3>ボキボキしない、やさしい整体</h3><p>強く押したり、骨を鳴らしたりしません。はじめての方やご高齢の方も安心です。</p></div>
+        <div class="card"><div class="num">03</div><h3>自宅でできるセルフケア付き</h3><p>施術後に、1日3分でできるストレッチをLINEでお送りします。通う回数を減らすのが目標です。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-title"><span>FLOW</span><h2>はじめての方の流れ</h2></div>
+      <ol class="flow">
+        <li><h3>ネットで予約<small>Googleマップからも予約できます</small></h3><p>空いている日時を選ぶだけ。24時間受付で、お電話でも受け付けています。</p></li>
+        <li><h3>カウンセリング</h3><p>お悩みや生活習慣をうかがい、姿勢と動きをチェックします。</p></li>
+        <li><h3>施術（約40分）</h3><p>原因に合わせて、からだを整えていきます。</p></li>
+        <li><h3>セルフケアのご案内</h3><p>ご自宅でのストレッチと、次回の目安をお伝えします。</p></li>
+      </ol>
+      <div class="after-line" style="margin-top:28px">
+        <div>
+          <h3>ご予約のあとは、LINEで</h3>
+          <p>通院中のやりとりは、LINE公式アカウントでお手軽に。</p>
+          <p class="opt">※友だち登録は任意です。登録しなくても、ネット予約・お電話でご予約いただけます。</p>
+          <a class="btn btn-line btn-sm" href="#reserve">LINEで友だち追加（任意）</a>
+        </div>
+        <ul>
+          <li><b>前日のお知らせ</b>ご予約の前日に、日時をお送りします</li>
+          <li><b>次回の予約</b>トークからそのまま次回の予約・変更</li>
+          <li><b>セルフケア動画</b>施術後に、ご自宅でのストレッチ動画をお届け</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="menu">
+    <div class="wrap">
+      <div class="sec-title"><span>MENU</span><h2>メニュー・料金</h2></div>
+      <table class="menu-table">
+        <tr class="first"><th><span class="tag">初回限定</span>はじめての方 整体コース（60分）<small>カウンセリング・姿勢チェック・施術・セルフケア指導</small></th><td>3,980円</td></tr>
+        <tr><th>整体コース（60分）<small>2回目以降の方</small></th><td>6,600円</td></tr>
+        <tr><th>じっくり整体コース（90分）<small>全身をしっかり整えたい方に</small></th><td>9,350円</td></tr>
+        <tr><th>回数券（5回）<small>有効期限6か月</small></th><td>29,700円</td></tr>
+      </table>
+      <p class="menu-note">※料金はすべて税込です。※現金・各種クレジットカード・PayPayが使えます。</p>
+    </div>
+  </section>
+
+  <section id="staff">
+    <div class="wrap">
+      <div class="sec-title"><span>STAFF</span><h2>院長紹介</h2></div>
+      <div class="staff">
+        <div class="staff-photo">院長の写真</div>
+        <div>
+          <p class="role">院長・柔道整復師</p>
+          <h3>木下 ひろし（架空）</h3>
+          <p>整形外科のリハビリ室で10年、たくさんの肩こり・腰痛の方と向き合ってきました。「その場でラクになる」だけでなく「戻りにくいからだ」を一緒に作ることを大切にしています。どんな小さなお悩みでも、気軽に話しかけてください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-title"><span>VOICE</span><h2>お客さまの声</h2></div>
+      <div class="voices">
+        <div class="voice"><div class="stars">★★★★★</div><p>在宅ワークで首が回らなくなり来院。原因を図で説明してもらえて納得できました。3回目で朝の痛みがほぼなくなりました。</p><div class="who">30代・会社員の方</div></div>
+        <div class="voice"><div class="stars">★★★★★</div><p>強い整体が苦手でしたが、ここは本当にやさしい。教えてもらったストレッチを毎朝続けています。</p><div class="who">50代・パートの方</div></div>
+        <div class="voice"><div class="stars">★★★★★</div><p>夜中でもスマホで空きを見て予約できるのが便利。仕事帰りの20時でも行けるので助かっています。</p><div class="who">40代・会社員の方</div></div>
+      </div>
+      <p class="voices-note">※サンプル用の架空の声です。実際の制作では、お客さまの許可を得た本物の声を掲載します。※効果には個人差があります。</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap" style="max-width:780px">
+      <div class="sec-title"><span>FAQ</span><h2>よくある質問</h2></div>
+      <div class="faq">
+        <details><summary>どんな服装で行けばいいですか？</summary><p>動きやすい服装がおすすめです。お着替え（無料）もご用意しているので、お仕事帰りでもそのままお越しください。</p></details>
+        <details><summary>どのくらいの頻度で通えばいいですか？</summary><p>最初の1か月は週1回、その後は2〜4週に1回が目安です。無理に回数券をおすすめすることはありません。</p></details>
+        <details><summary>駐車場はありますか？</summary><p>院の前に1台分ございます。満車の場合は近くのコインパーキングをご案内します。</p></details>
+        <details><summary>予約の変更やキャンセルはできますか？</summary><p>予約完了メールのリンクから、前日まで変更・キャンセルができます。LINEやお電話でのご連絡でも大丈夫です。当日のキャンセルもご連絡いただければ料金はかかりません。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="access">
+    <div class="wrap">
+      <div class="sec-title"><span>ACCESS</span><h2>アクセス・営業時間</h2></div>
+      <div class="access">
+        <div class="map">ここにGoogleマップが入ります<br>（Googleビジネスプロフィールと連動）</div>
+        <div class="info">
+          <dl>
+            <dt>住所</dt><dd>〇〇県〇〇市〇〇町1-2-3 こもれびビル1F</dd>
+            <dt>電話</dt><dd>000-0000-0000</dd>
+            <dt>最寄り駅</dt><dd>〇〇線「〇〇駅」東口から徒歩4分</dd>
+            <dt>駐車場</dt><dd>1台あり</dd>
+          </dl>
+          <table class="hours">
+            <thead><tr><th>時間</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th></tr></thead>
+            <tbody>
+              <tr><th>10:00〜13:00</th><td>●</td><td>●</td><td>－</td><td>●</td><td>●</td><td>●</td><td>●</td></tr>
+              <tr><th>15:00〜20:00</th><td>●</td><td>●</td><td>－</td><td>●</td><td>●</td><td>●</td><td>－</td></tr>
+            </tbody>
+          </table>
+          <p class="menu-note">定休日：水曜日・日曜午後</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reserve">
+    <div class="wrap">
+      <div class="sec-title"><span>RESERVE</span><h2>ご予約</h2></div>
+      <div class="reserve">
+        <div class="booking">
+          <div class="booking-h"><h3>空き状況（ネット予約）</h3><span>○をえらぶと、そのまま予約できます</span></div>
+          <table class="slots">
+            <thead><tr><th></th><th>月<b>26</b></th><th>火<b>27</b></th><th>水<b>28</b></th><th>木<b>29</b></th><th>金<b>30</b></th><th>土<b>31</b></th><th>日<b>1</b></th></tr></thead>
+            <tbody>
+              <tr><th>10:00</th><td class="x">×</td><td class="o">○</td><td class="c">休</td><td class="o">○</td><td class="x">×</td><td class="x">×</td><td class="o">○</td></tr>
+              <tr><th>11:30</th><td class="o">○</td><td class="o">○</td><td class="c">休</td><td class="x">×</td><td class="o">○</td><td class="x">×</td><td class="x">×</td></tr>
+              <tr><th>15:00</th><td class="o">○</td><td class="x">×</td><td class="c">休</td><td class="o">○</td><td class="o">○</td><td class="o">○</td><td class="c">休</td></tr>
+              <tr><th>17:00</th><td class="x">×</td><td class="o">○</td><td class="c">休</td><td class="o">○</td><td class="x">×</td><td class="o">○</td><td class="c">休</td></tr>
+              <tr><th>19:00</th><td class="o">○</td><td class="x">×</td><td class="c">休</td><td class="x">×</td><td class="o">○</td><td class="x">×</td><td class="c">休</td></tr>
+            </tbody>
+          </table>
+          <p class="booking-ph">ここに予約システム（例：空き枠カレンダー）が入ります</p>
+          <p class="booking-note">※サンプル表示です。実際の制作では、Googleマップの「予約」ボタン（Googleで予約）と連携できる予約システムを入れ、同じ空き枠から24時間予約できるようにします。</p>
+        </div>
+        <div class="ways">
+          <div class="way main">
+            <h3>ネット予約（24時間）</h3>
+            <p>空いている日時を選んで、お名前と電話番号を入れるだけ。友だち登録やアプリは不要です。</p>
+            <a class="btn btn-web" href="#reserve">空き状況を見て予約する</a>
+          </div>
+          <div class="way">
+            <h3>お電話でのご予約</h3>
+            <p>受付 10:00〜20:00（水曜定休）。施術中は出られないことがあり、折り返しお電話します。</p>
+            <a class="btn btn-tel" href="tel:000-0000-0000">電話 000-0000-0000</a>
+          </div>
+          <div class="way">
+            <h3>LINEでのご相談</h3>
+            <p>「こんな症状でも大丈夫？」などのご相談や、2回目以降の予約変更に。</p>
+            <a class="btn btn-line" href="#reserve">LINEで相談する</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="cta">
+        <h2>まずは一度、からだの状態を<br>チェックしにきませんか？</h2>
+        <p>初回限定 3,980円。ネット予約なら24時間、空いている日時を選んで予約できます。</p>
+        <div class="hero-cta">
+          <a class="btn btn-web" href="#reserve">24時間ネット予約</a>
+          <a class="btn btn-tel" href="tel:000-0000-0000">電話 000-0000-0000</a>
+        </div>
+        <p class="sub-links">ご相談だけなら <a href="#reserve">LINEでどうぞ</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© こもれび整体院（架空の店舗）</p>
+  <p>制作サンプル：のきさき</p>
+</footer>
+
+<div class="fixed-bar">
+  <a class="btn btn-tel" href="tel:000-0000-0000">電話</a>
+  <a class="btn btn-web" href="#reserve">ネット予約</a>
+</div>
+
+</body>
+</html>
