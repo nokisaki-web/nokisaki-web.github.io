@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nokisaki-web.github.io/sitemap.xml
