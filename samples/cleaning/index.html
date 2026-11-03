@@ -14,7 +14,7 @@
     --bg:#ffffff; --tint:#f1f8fc; --tint2:#e3f2fa; --ink:#1d3445; --sub:#53697a;
     --blue:#1f8fcf; --blue-d:#136a9e; --blue-l:#d6ecf8; --navy:#123247;
     --line:#06c755; --line-d:#05a948; --warn:#f08a3c; --warn-l:#fff3e8; --border:#d9e7ef;
-    --radius:14px;
+    --radius:8px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -41,7 +41,7 @@
   @media (max-width:480px){.head-right .btn{display:none}}
   @media (max-width:520px){.hero-cta .btn{width:100%}}
 
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:13px 24px;font-weight:700;text-decoration:none;font-size:15px;border:0;cursor:pointer;line-height:1.4;text-align:center}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:6px;padding:13px 24px;font-weight:700;text-decoration:none;font-size:15px;border:0;cursor:pointer;line-height:1.4;text-align:center}
   .btn-line{background:var(--line);color:#fff;box-shadow:0 3px 0 var(--line-d)}
   .btn-tel{background:#fff;color:var(--blue-d);border:2px solid var(--blue)}
   .btn-web{background:var(--blue);color:#fff;box-shadow:0 3px 0 var(--blue-d)}
@@ -52,34 +52,34 @@
   .ico{width:20px;height:20px;flex:none}
 
   /* hero */
-  .hero{position:relative;padding:48px 0 56px;background:linear-gradient(180deg,var(--tint2) 0%,var(--tint) 55%,#fff 100%);overflow:hidden}
-  .hero::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.9),rgba(255,255,255,0) 70%)}
-  .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+  .hero{position:relative;padding:40px 0 56px;background:var(--tint)}
+  .hero-grid{position:relative;display:grid;grid-template-columns:.95fr 1.05fr;gap:40px;align-items:center}
   .badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-  .badge{display:inline-block;background:#fff;border:1px solid var(--border);border-radius:999px;padding:3px 12px;font-size:13px;color:var(--blue-d);font-weight:500}
+  .badge{display:inline-block;background:#fff;border:1px solid var(--border);border-radius:4px;padding:3px 12px;font-size:13px;color:var(--blue-d);font-weight:500}
   .hero h1{font-size:clamp(28px,4.6vw,44px);margin-bottom:14px;font-weight:900;letter-spacing:.01em}
   .hero h1 em{font-style:normal;color:var(--blue)}
   .hero-lead{color:var(--sub);margin-bottom:20px}
   .price-chips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px}
-  .chip{background:#fff;border:1px solid var(--border);border-radius:12px;padding:10px 12px;text-align:center}
+  .chip{background:#fff;border:1px solid var(--border);border-radius:6px;padding:10px 12px;text-align:center}
   .chip .t{font-size:12px;color:var(--sub);display:block;line-height:1.4}
   .chip .p{font-family:"Outfit",sans-serif;font-weight:700;font-size:24px;color:var(--navy);line-height:1.3}
   .chip .p small{font-family:"Noto Sans JP",sans-serif;font-size:12px;font-weight:700}
   .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
   .hero-note{margin-top:12px;font-size:13px;color:var(--sub)}
   .hero-visual{position:relative}
-  .ph{position:relative;border-radius:var(--radius);overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
-  .ph span{display:block;width:100%;padding:10px 12px;font-size:12px;color:#fff;background:rgba(18,50,71,.42);text-align:center;line-height:1.5}
-  .hero-photo{align-items:flex-start;aspect-ratio:5/4;background:linear-gradient(150deg,#bfe3f5 0%,#8ccbea 45%,#5aa9d6 100%)}
-  .line-card{position:absolute;left:-24px;bottom:-22px;width:min(270px,70%);background:#fff;border-radius:14px;box-shadow:0 10px 30px rgba(18,50,71,.16);padding:14px 14px 12px;font-size:13px}
+  .hero-photo{margin:0;aspect-ratio:5/4;border-radius:var(--radius);overflow:hidden;background:#cfe3ee}
+  .hero-photo img{display:block;width:100%;height:100%;object-fit:cover}
+  .line-card{position:absolute;left:-24px;bottom:-22px;width:min(270px,70%);background:#fff;border-radius:8px;border:1px solid var(--border);box-shadow:0 6px 18px rgba(18,50,71,.12);padding:14px 14px 12px;font-size:13px}
   .line-card .lc-h{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--navy);margin-bottom:8px}
   .bubble{background:#eef6ec;border-radius:12px 12px 12px 2px;padding:8px 10px;margin-bottom:6px;line-height:1.55}
   .bubble.me{background:var(--line);color:#fff;border-radius:12px 12px 2px 12px;margin-left:24px}
-  .bubble .mini{display:block;width:64px;height:44px;border-radius:6px;background:linear-gradient(135deg,#d0e9f6,#9dcde8);margin-bottom:6px}
+  .bubble .mini{display:block;width:64px;height:44px;border-radius:4px;background:#cfe6f3;margin-bottom:6px}
   @media (max-width:820px){
-    .hero-grid{grid-template-columns:1fr;gap:28px}
-    .hero-photo{aspect-ratio:16/10}
-    .line-card{position:relative;left:auto;bottom:auto;width:auto;margin:-36px 16px 0}
+    .hero{padding-top:16px}
+    .hero-grid{grid-template-columns:1fr;gap:24px}
+    .hero-visual{display:contents}
+    .hero-photo{order:-1;aspect-ratio:3/2}
+    .line-card{position:relative;left:auto;bottom:auto;width:auto;margin:0}
   }
   @media (max-width:420px){.chip .p{font-size:20px}.chip{padding:8px 6px}}
 
@@ -93,7 +93,7 @@
 
   /* season */
   .season{background:var(--warn-l);border:2px solid #f8c79e;border-radius:var(--radius);padding:18px 22px;display:flex;gap:16px;align-items:center;margin-top:-1px}
-  .season .tag{flex:none;background:var(--warn);color:#fff;font-weight:700;font-size:13px;border-radius:8px;padding:6px 10px;line-height:1.4;text-align:center}
+  .season .tag{flex:none;background:var(--warn);color:#fff;font-weight:700;font-size:13px;border-radius:4px;padding:6px 10px;line-height:1.4;text-align:center}
   .season p{font-size:15px}
   .season strong{color:#c4621b}
   @media (max-width:600px){.season{flex-direction:column;align-items:flex-start;gap:8px}}
@@ -101,8 +101,7 @@
   section{padding:76px 0}
   .tint{background:var(--tint)}
   .sec-title{text-align:center;margin-bottom:40px}
-  .sec-title span{display:block;font-family:"Outfit",sans-serif;font-size:13px;letter-spacing:.22em;color:var(--blue);font-weight:700}
-  .sec-title h2{font-size:clamp(22px,3.4vw,30px)}
+    .sec-title h2{font-size:clamp(22px,3.4vw,30px)}
   .sec-title p{color:var(--sub);margin-top:8px;font-size:15px}
 
   /* price */
@@ -144,9 +143,9 @@
   .checks li::before{content:"";position:absolute;left:0;top:5px;width:20px;height:20px;border-radius:50%;background:var(--blue-l)}
   .checks li::after{content:"";position:absolute;left:6px;top:9px;width:8px;height:5px;border-left:2px solid var(--blue-d);border-bottom:2px solid var(--blue-d);transform:rotate(-45deg)}
   .small{font-size:13px;color:var(--sub)}
-  .area-map{margin-top:14px;border-radius:12px;background:repeating-linear-gradient(0deg,#eaf4fa 0 22px,#f4f9fc 22px 44px);min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;color:var(--sub);padding:16px}
+  .area-map{margin-top:14px;border-radius:6px;background:#eaf3f8;min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;color:var(--sub);padding:16px}
   .area-list{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px;list-style:none}
-  .area-list li{background:var(--tint2);color:var(--blue-d);border-radius:999px;padding:2px 12px;font-size:14px;font-weight:500}
+  .area-list li{background:var(--tint2);color:var(--blue-d);border-radius:4px;padding:2px 12px;font-size:14px;font-weight:500}
   @media (max-width:760px){.noextra{grid-template-columns:1fr}}
 
   /* flow */
@@ -160,38 +159,32 @@
   @media (max-width:520px){.flow{grid-template-columns:1fr}}
 
   /* before after */
-  .ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .ba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:860px;margin:0 auto}
   .ba{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
-  .ba-pair{display:grid;grid-template-columns:1fr 1fr}
-  .ba-pair .ph{aspect-ratio:1;border-radius:0}
-  .ba-pair .ph::before{position:absolute;top:8px;left:8px;font-family:"Outfit",sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;padding:1px 8px;border-radius:4px;color:#fff}
-  .ph.before{background:linear-gradient(160deg,#c9c3b4,#9a927f)}
-  .ph.before::before{content:"BEFORE";background:#6b6455}
-  .ph.after{background:linear-gradient(160deg,#e8f6fd,#b4def3)}
-  .ph.after::before{content:"AFTER";background:var(--blue)}
-  .ph.after span{background:rgba(19,106,158,.5)}
+  .ba-photo{position:relative;margin:0;aspect-ratio:3/2;background:#d6e6ef}
+  .ba-photo img{display:block;width:100%;height:100%;object-fit:cover}
+  .ba-photo figcaption{position:absolute;right:0;bottom:0;background:rgba(18,50,71,.7);color:#fff;font-size:11px;padding:2px 8px}
   .ba-cap{padding:14px 16px}
   .ba-cap h3{font-size:16px}
   .ba-cap p{font-size:13px;color:var(--sub);line-height:1.7}
-  @media (max-width:860px){.ba-grid{grid-template-columns:1fr}}
+  @media (max-width:700px){.ba-grid{grid-template-columns:1fr}}
 
   /* staff */
   .staff-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
   .staff{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:start;background:#fff;border-radius:var(--radius);padding:24px;border:1px solid var(--border)}
-  .staff .ph{aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,var(--blue-l),#9ccfe9);align-items:center}
-  .staff .ph span{background:none;color:var(--blue-d);font-size:11px}
+  .staff .initial{aspect-ratio:1;border-radius:var(--radius);background:var(--blue-l);color:var(--blue-d);display:flex;align-items:center;justify-content:center;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:40px}
   .staff .role{color:var(--blue);font-weight:700;font-size:13px}
   .staff h3{font-size:20px}
   .staff p{font-size:14px;color:var(--sub);margin-top:6px}
   .quals{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;list-style:none}
   .quals li{font-size:12px;border:1px solid var(--border);border-radius:6px;padding:0 8px;color:var(--ink)}
   @media (max-width:860px){.staff-grid{grid-template-columns:1fr}}
-  @media (max-width:480px){.staff{grid-template-columns:1fr}.staff .ph{width:130px}}
+  @media (max-width:480px){.staff{grid-template-columns:1fr}.staff .initial{width:110px}}
 
   /* safety */
   .safety{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .safe{background:#fff;border-radius:var(--radius);padding:26px 22px;border:1px solid var(--border)}
-  .safe .icon{width:48px;height:48px;border-radius:12px;background:var(--tint2);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .safe .icon{width:48px;height:48px;border-radius:6px;background:var(--tint2);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
   .safe h3{font-size:18px;margin-bottom:6px}
   .safe p{font-size:14px;color:var(--sub)}
   @media (max-width:860px){.safety{grid-template-columns:1fr}}
@@ -213,7 +206,7 @@
   .cal-h h3{font-size:18px}
   .cal-h span{font-size:12px;color:var(--sub)}
   .days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
-  .day{border-radius:10px;background:var(--tint);padding:8px 2px;line-height:1.3}
+  .day{border-radius:6px;background:var(--tint);padding:8px 2px;line-height:1.3}
   .day .d{font-family:"Outfit",sans-serif;font-weight:700;font-size:18px;display:block}
   .day .w{font-size:11px;color:var(--sub);display:block}
   .day .s{display:block;font-size:18px;font-weight:700;margin-top:4px}
@@ -243,7 +236,7 @@
   @media (max-width:400px){.day .d{font-size:15px}.day .s{font-size:15px}.cal{padding:16px 12px}}
 
   /* faq */
-  .faq details{background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:10px;padding:0 20px}
+  .faq details{background:#fff;border:1px solid var(--border);border-radius:6px;margin-bottom:10px;padding:0 20px}
   .faq summary{cursor:pointer;padding:16px 28px 16px 30px;font-weight:700;list-style:none;position:relative}
   .faq summary::before{content:"Q";position:absolute;left:0;top:15px;font-family:"Outfit",sans-serif;color:var(--blue);font-size:18px}
   .faq summary::-webkit-details-marker{display:none}
@@ -253,12 +246,12 @@
 
   /* access */
   .access{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-  .map{border-radius:var(--radius);background:repeating-linear-gradient(45deg,#e6f1f7 0 12px,#f2f8fb 12px 24px);min-height:300px;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:14px;text-align:center;padding:20px}
+  .map{border-radius:var(--radius);background:#e9f2f7;min-height:300px;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:14px;text-align:center;padding:20px}
   .info dl{display:grid;grid-template-columns:100px 1fr;gap:10px 16px}
   .info dt{font-weight:700;color:var(--blue-d)}
   @media (max-width:760px){.access{grid-template-columns:1fr}.info dl{grid-template-columns:84px 1fr}}
 
-  .cta{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-d) 100%);color:#fff;text-align:center;border-radius:22px;padding:48px 24px}
+  .cta{background:var(--blue-d);color:#fff;text-align:center;border-radius:var(--radius);padding:48px 24px}
   .cta h2{font-size:clamp(22px,3.4vw,30px);margin-bottom:10px}
   .cta p{opacity:.92;margin-bottom:24px}
   .cta .hero-cta{justify-content:center}
@@ -320,7 +313,7 @@
         <p class="hero-note">ネット予約は24時間受付・Googleマップの「予約」ボタンからも予約できます。<br>お電話は <a href="tel:000-0000-0000">000-0000-0000</a>（8:00〜19:00）。表示はすべて税込です。</p>
       </div>
       <div class="hero-visual">
-        <div class="ph hero-photo" role="img" aria-label="作業風景の写真が入ります"><span>ここにエアコン分解洗浄の作業写真が入ります</span></div>
+        <figure class="hero-photo"><img src="https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?auto=format&fit=crop&w=1200&q=70" alt="明るいリビングの床をモップで掃除するスタッフ" width="1200" height="960"></figure>
         <div class="line-card" aria-hidden="true">
           <div class="lc-h"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#06c755"/><path fill="#fff" d="M12 6c-3.6 0-6.5 2.3-6.5 5.2 0 2.6 2.3 4.7 5.4 5.1l-.2 1.5c0 .2.1.4.5.2 1-.5 4.2-2.6 5.6-4.2.8-.8 1.2-1.7 1.2-2.6C18.5 8.3 15.6 6 12 6z"/></svg>LINEでのやりとり例</div>
           <div class="bubble me"><span class="mini"></span>リビングのエアコンです。お掃除機能付きでしょうか？</div>
@@ -348,7 +341,7 @@
         <p><strong>6〜8月はエアコンのご依頼が集中し、2〜3週間先まで埋まることがあります。</strong>冷房を使い始める前の<strong>4〜5月</strong>のご予約がおすすめです。ネット予約では2か月先までの空き状況を見て、日時を選べます。</p>
       </div>
 
-      <div class="sec-title"><span>PRICE</span><h2>メニューと料金</h2><p>すべて税込・出張費込みの料金です。</p></div>
+      <div class="sec-title"><h2>メニューと料金</h2><p>すべて税込・出張費込みの料金です。</p></div>
 
       <div class="price-group">
         <h3>エアコンクリーニング</h3>
@@ -409,7 +402,7 @@
 
   <section class="tint" id="area">
     <div class="wrap">
-      <div class="sec-title"><span>NO EXTRA CHARGE</span><h2>追加料金のことと、出張エリア</h2></div>
+      <div class="sec-title"><h2>追加料金のことと、出張エリア</h2></div>
       <div class="noextra">
         <div class="box">
           <h3>見積もり後に金額は増えません</h3>
@@ -436,7 +429,7 @@
 
   <section id="flow">
     <div class="wrap">
-      <div class="sec-title"><span>FLOW</span><h2>ご依頼から作業完了までの流れ</h2></div>
+      <div class="sec-title"><h2>ご依頼から作業完了までの流れ</h2></div>
       <ol class="flow">
         <li><h3>ネットで予約</h3><p>料金表にあるメニューは、空いている日時を選んでそのまま予約完了。料金が分からない場所は、先にLINEで写真を送ってください。</p><span class="time">LINE見積もりはその日のうちに</span></li>
         <li><h3>予約確定・前日のご連絡</h3><p>予約完了メールをお送りします。前日には、うかがう時間をメール（LINEに登録の方はLINE）でお知らせします。</p></li>
@@ -449,28 +442,15 @@
 
   <section class="tint">
     <div class="wrap">
-      <div class="sec-title"><span>BEFORE / AFTER</span><h2>作業前と作業後</h2><p>実際の作業写真を、お客さまの許可をいただいて掲載します。</p></div>
+      <div class="sec-title"><h2>作業の事例</h2><p>実際の制作では、お客さまの許可をいただいた作業前・作業後の写真を掲載します。</p></div>
       <div class="ba-grid">
         <div class="ba">
-          <div class="ba-pair">
-            <div class="ph before"><span>エアコン内部（作業前）の写真</span></div>
-            <div class="ph after"><span>エアコン内部（作業後）の写真</span></div>
-          </div>
+          <figure class="ba-photo"><img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=70" alt="大きな窓のある明るいリビング" loading="lazy" width="800" height="533"><figcaption>写真はイメージです</figcaption></figure>
           <div class="ba-cap"><h3>壁掛けエアコン（築12年・リビング）</h3><p>送風ファンの黒いカビ汚れを、分解・高圧洗浄で落としました。</p></div>
         </div>
         <div class="ba">
-          <div class="ba-pair">
-            <div class="ph before"><span>換気扇（作業前）の写真</span></div>
-            <div class="ph after"><span>換気扇（作業後）の写真</span></div>
-          </div>
+          <figure class="ba-photo"><img src="https://images.unsplash.com/photo-1757387240036-d7eb9b096c40?auto=format&fit=crop&w=800&q=70" alt="白い収納棚のある明るいキッチン" loading="lazy" width="800" height="533"><figcaption>写真はイメージです</figcaption></figure>
           <div class="ba-cap"><h3>レンジフード（約5年ぶりの掃除）</h3><p>ファンとフィルターをつけ置きし、こびりついた油を落としました。</p></div>
-        </div>
-        <div class="ba">
-          <div class="ba-pair">
-            <div class="ph before"><span>浴室（作業前）の写真</span></div>
-            <div class="ph after"><span>浴室（作業後）の写真</span></div>
-          </div>
-          <div class="ba-cap"><h3>浴室（ユニットバス）</h3><p>鏡のウロコ汚れ、床の黒ずみ、エプロン内部のカビを洗浄しました。</p></div>
         </div>
       </div>
     </div>
@@ -478,10 +458,10 @@
 
   <section id="staff">
     <div class="wrap">
-      <div class="sec-title"><span>STAFF</span><h2>おうちにうかがうスタッフ</h2><p>お見積もりから作業まで、いつも同じふたりが担当します。</p></div>
+      <div class="sec-title"><h2>おうちにうかがうスタッフ</h2><p>お見積もりから作業まで、いつも同じふたりが担当します。</p></div>
       <div class="staff-grid">
         <div class="staff">
-          <div class="ph"><span>代表の写真</span></div>
+          <div class="initial" aria-hidden="true">健太</div>
           <div>
             <p class="role">代表・エアコン担当</p>
             <h3>水野 健太（架空）</h3>
@@ -490,7 +470,7 @@
           </div>
         </div>
         <div class="staff">
-          <div class="ph"><span>スタッフの写真</span></div>
+          <div class="initial" aria-hidden="true">さき</div>
           <div>
             <p class="role">水まわり担当</p>
             <h3>水野 さき（架空）</h3>
@@ -504,7 +484,7 @@
 
   <section class="tint">
     <div class="wrap">
-      <div class="sec-title"><span>SAFETY</span><h2>小さなお子さまやペットがいるご家庭にも</h2></div>
+      <div class="sec-title"><h2>小さなお子さまやペットがいるご家庭にも</h2></div>
       <div class="safety">
         <div class="safe">
           <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-3 4-6 7.3-6 10.5a6 6 0 0 0 12 0C18 10.3 15 7 12 3z" fill="none" stroke="#136a9e" stroke-width="2"/></svg></div>
@@ -527,7 +507,7 @@
 
   <section>
     <div class="wrap">
-      <div class="sec-title"><span>VOICE</span><h2>お客さまの声</h2></div>
+      <div class="sec-title"><h2>お客さまの声</h2></div>
       <div class="voices">
         <div class="voice"><div class="stars">★★★★★<span class="menu">エアコン2台</span></div><p>共働きで平日は家にいられないので、夜にネットで土曜の朝の空きを見つけて予約できて助かりました。料金が最初から書いてあるのも気楽でした。</p><div class="who">〇〇市・30代・共働き世帯の方</div></div>
         <div class="voice"><div class="stars">★★★★★<span class="menu">水まわり3点</span></div><p>子どもがいるので洗剤が気になっていましたが、何を使うか先に教えてもらえて安心でした。換気扇がピカピカになり、料理が楽しくなりました。</p><div class="who">△△市・40代・子育て中の方</div></div>
@@ -539,7 +519,7 @@
 
   <section class="tint" id="reserve">
     <div class="wrap">
-      <div class="sec-title"><span>RESERVATION</span><h2>空き状況とご予約方法</h2><p>料金が決まっているメニューは、ネットで日時を選んでそのまま予約できます（24時間受付）。</p></div>
+      <div class="sec-title"><h2>空き状況とご予約方法</h2><p>料金が決まっているメニューは、ネットで日時を選んでそのまま予約できます（24時間受付）。</p></div>
       <div class="reserve">
         <div class="cal">
           <span class="route web">料金が決まっているメニュー</span>
@@ -585,7 +565,7 @@
 
   <section id="faq">
     <div class="wrap" style="max-width:800px">
-      <div class="sec-title"><span>FAQ</span><h2>よくある質問</h2></div>
+      <div class="sec-title"><h2>よくある質問</h2></div>
       <div class="faq">
         <details><summary>作業中、家にいないといけませんか？</summary><p>最初の確認と、最後の仕上がり確認・お支払いのときだけお立ち会いください。作業中はお買い物やお出かけをしていただいて大丈夫です。</p></details>
         <details><summary>エアコンがお掃除機能付きかどうか分かりません。</summary><p>本体の全体写真と型番シールの写真をLINEで送っていただければ、こちらで確認してお伝えします。</p></details>
@@ -600,7 +580,7 @@
 
   <section class="tint" id="access">
     <div class="wrap">
-      <div class="sec-title"><span>INFORMATION</span><h2>店舗情報</h2></div>
+      <div class="sec-title"><h2>店舗情報</h2></div>
       <div class="access">
         <div class="map">ここにGoogleマップが入ります<br>（Googleビジネスプロフィールと連動。<br>口コミもここから書いていただけます）</div>
         <div class="info">
@@ -638,6 +618,7 @@
 <footer>
   <p>© おそうじ屋しずく（架空の店舗）</p>
   <p>制作サンプル：のきさき</p>
+  <p>写真：<a href="https://unsplash.com/">Unsplash</a></p>
 </footer>
 
 <div class="fixed-bar">

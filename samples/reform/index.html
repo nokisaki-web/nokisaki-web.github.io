@@ -45,8 +45,8 @@
   .head .btn{white-space:nowrap}
   @media (max-width:560px){.head-tel{display:none}.logo{font-size:17px}}
   /* hero */
-  .hero{background:linear-gradient(180deg,var(--navy-l) 0%,var(--bg) 100%);padding:52px 0 60px;border-bottom:1px solid var(--border)}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+  .hero{background:var(--paper);padding:40px 0 56px;border-bottom:1px solid var(--border)}
+  .hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center}
   .badge{display:inline-block;background:var(--navy);color:#fff;padding:4px 14px;font-size:13px;margin-bottom:18px;border-radius:3px}
   .hero h1{font-size:clamp(28px,4.6vw,44px);margin-bottom:18px;color:var(--navy-d)}
   .hero h1 em{font-style:normal;color:var(--wood-d);border-bottom:3px solid var(--wood-l)}
@@ -56,26 +56,20 @@
   .hero-points li::before{content:"✓ ";color:var(--wood-d);font-weight:700}
   .cta-row{display:flex;flex-wrap:wrap;gap:12px}
   .hero-note{margin-top:14px;font-size:13px;color:var(--sub)}
-  .hero-visual{position:relative}
-  .ph{display:flex;align-items:flex-end;justify-content:center;color:#fff;font-size:12px;text-align:center;position:relative;overflow:hidden}
-  .ph span{display:block;width:100%;background:rgba(20,42,70,.45);padding:10px 12px}
-  .hero-photo span{text-align:left;padding-right:48%}
-  .hero-photo{aspect-ratio:4/3;border-radius:var(--radius);background:linear-gradient(150deg,#c9b192 0%,#a8794a 55%,#6f4f2e 100%)}
-  .hero-photo2{position:absolute;right:-12px;bottom:-24px;width:44%;aspect-ratio:1;border-radius:var(--radius);border:5px solid #fff;background:linear-gradient(150deg,#8fa3bd,#1e3a5f);box-shadow:0 8px 24px rgba(20,42,70,.18)}
-  .years{position:absolute;left:-14px;top:-14px;width:108px;height:108px;border-radius:50%;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"Noto Serif JP",serif;line-height:1.2;box-shadow:0 6px 18px rgba(20,42,70,.25)}
-  .years small{font-size:12px}
-  .years b{font-size:34px}
-  @media (max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-visual{margin:12px 14px 20px}}
+  .hero-visual{position:relative;aspect-ratio:5/4;border-radius:var(--radius);overflow:hidden;background:#cbb79b}
+  .hero-visual img{display:block;width:100%;height:100%;object-fit:cover}
+  .years{position:absolute;left:0;bottom:0;background:var(--navy);color:#fff;padding:8px 16px;display:flex;align-items:baseline;gap:4px;font-family:"Noto Serif JP",serif;line-height:1.2}
+  .years small{font-size:13px}
+  .years b{font-size:28px}
+  @media (max-width:820px){.hero{padding-top:16px}.hero-grid{grid-template-columns:1fr;gap:24px}.hero-visual{order:-1;aspect-ratio:3/2}}
   /* sections */
   section{padding:76px 0}
   .sec-title{text-align:center;margin-bottom:42px}
-  .sec-title > span{display:block;font-size:12px;letter-spacing:.24em;color:var(--wood-d);font-weight:700;margin-bottom:4px}
-  .sec-title h2{font-size:clamp(23px,3.4vw,31px);color:var(--navy-d)}
+    .sec-title h2{font-size:clamp(23px,3.4vw,31px);color:var(--navy-d)}
   .sec-title p{color:var(--sub);margin-top:10px;font-size:15px}
   .alt{background:var(--paper)}
   .navy{background:var(--navy);color:#fff}
   .navy .sec-title h2{color:#fff}
-  .navy .sec-title > span{color:#d9b98f}
   .navy .sec-title p{color:#c8d3e2}
   /* menu */
   .menu{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -92,12 +86,10 @@
   /* works */
   .works{display:grid;grid-template-columns:1fr 1fr;gap:26px}
   .work{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-  .ba{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:#fff}
-  .ba .ph{aspect-ratio:4/3}
-  .ba .before{background:linear-gradient(150deg,#b9b5ad,#8a867e)}
-  .ba .after{background:linear-gradient(150deg,#d8c4a6,#a8794a)}
-  .ba .lbl{position:absolute;top:8px;left:8px;font-size:11px;font-weight:700;padding:2px 10px;border-radius:2px;background:#fff;color:var(--ink)}
-  .ba .after .lbl{background:var(--wood-d);color:#fff}
+  .work-photo{position:relative;margin:0;aspect-ratio:3/2;background:#d8cdbd}
+  .work-photo img{display:block;width:100%;height:100%;object-fit:cover}
+  .work-photo figcaption{position:absolute;right:0;bottom:0;background:rgba(20,42,70,.7);color:#fff;font-size:11px;padding:2px 8px}
+  .work.text-only{border-top:4px solid var(--wood)}
   .work-body{padding:18px 20px 20px}
   .work-body .area{font-size:12px;color:var(--sub)}
   .work-body h3{font-size:18px;color:var(--navy-d);margin:2px 0 8px}
@@ -113,7 +105,7 @@
   .reason p{font-size:15px;color:#d4dce8}
   @media (max-width:760px){.reasons{grid-template-columns:1fr}.reason{padding:20px}}
   /* line steps */
-  .line-box{background:#effaf2;border:2px solid #bfe8cb;border-radius:12px;padding:36px 32px}
+  .line-box{background:#effaf2;border:2px solid #bfe8cb;border-radius:var(--radius);padding:36px 32px}
   .line-head{display:flex;align-items:center;gap:14px;margin-bottom:26px;justify-content:center;text-align:center;flex-wrap:wrap}
   .line-head h2{font-size:clamp(22px,3.2vw,29px);color:var(--navy-d)}
   .line-head h2 em{font-style:normal;color:#04a547}
@@ -133,15 +125,16 @@
   .flow li{display:grid;grid-template-columns:86px 1fr;gap:18px;padding-bottom:22px;position:relative;counter-increment:f}
   .flow li::after{content:"";position:absolute;left:42px;top:56px;bottom:0;width:2px;background:var(--border)}
   .flow li:last-child::after{display:none}
-  .flow .st{width:86px;height:56px;background:var(--navy);color:#fff;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;letter-spacing:.1em;line-height:1.2}
-  .flow .st::after{content:counter(f,decimal-leading-zero);font-family:"Noto Serif JP",serif;font-size:20px;letter-spacing:0}
+  .flow .st{width:86px;height:56px;background:var(--navy);color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;line-height:1.2}
+  .flow .st::after{content:counter(f);font-family:"Noto Serif JP",serif;font-size:22px}
   .flow h3{font-size:18px;color:var(--navy-d)}
   .flow h3 small{font-family:"Noto Sans JP",sans-serif;font-size:12px;font-weight:500;color:var(--wood-d);background:var(--wood-l);border-radius:3px;padding:1px 8px;margin-left:8px;vertical-align:2px}
   .flow p{font-size:15px;color:var(--sub)}
   @media (max-width:520px){.flow li{grid-template-columns:64px 1fr;gap:14px}.flow .st{width:64px;height:50px}.flow li::after{left:31px;top:50px}}
   /* greeting */
   .greet{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start}
-  .greet-photo{aspect-ratio:3/4;border-radius:var(--radius);background:linear-gradient(160deg,#d6c3a8,#8a5f35)}
+  .greet-photo{margin:0;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;background:#d6c3a8}
+  .greet-photo img{display:block;width:100%;height:100%;object-fit:cover}
   .greet h3{font-size:clamp(20px,2.8vw,25px);color:var(--navy-d);margin-bottom:16px}
   .greet p{margin-bottom:14px;color:#3a4556}
   .sign{text-align:right;margin-top:18px}
@@ -170,7 +163,7 @@
   @media (max-width:860px){.warranty{grid-template-columns:1fr}}
   /* area */
   .area-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-  .map{border-radius:var(--radius);background:repeating-linear-gradient(45deg,#e7e2d8 0 12px,#efebe3 12px 24px);min-height:300px;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:14px;text-align:center;padding:20px;border:1px solid var(--border)}
+  .map{border-radius:var(--radius);background:#ebe6dc;min-height:300px;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:14px;text-align:center;padding:20px;border:1px solid var(--border)}
   .area-list h3{font-size:18px;color:var(--navy-d);margin-bottom:10px}
   .towns{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-bottom:18px}
   .towns li{background:var(--navy-l);color:var(--navy-d);padding:4px 12px;border-radius:3px;font-size:14px;font-weight:500}
@@ -188,7 +181,6 @@
   /* contact */
   .contact{background:var(--navy-d);color:#fff}
   .contact .sec-title h2{color:#fff}
-  .contact .sec-title > span{color:#d9b98f}
   .contact .sec-title p{color:#c8d3e2}
   .c-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:18px;align-items:start}
   .c-side{display:grid;gap:18px}
@@ -257,8 +249,7 @@
         <p class="hero-note">しつこい営業はいたしません。「まだ検討中」の段階でもお気軽にどうぞ。</p>
       </div>
       <div class="hero-visual">
-        <div class="ph hero-photo" role="img" aria-label="施工現場の写真が入ります"><span>ここに代表と職人の集合写真が入ります</span></div>
-        <div class="ph hero-photo2" role="img" aria-label="施工後の写真が入ります"><span>施工後のお部屋の写真</span></div>
+        <img src="https://images.unsplash.com/photo-1779031242515-205111711b23?auto=format&fit=crop&w=1200&q=70" alt="作業場で木材を加工する職人" width="1200" height="960">
         <div class="years"><small>創業</small><b>38</b><small>年</small></div>
       </div>
     </div>
@@ -266,7 +257,7 @@
 
   <section class="alt" id="menu">
     <div class="wrap">
-      <div class="sec-title"><span>MENU &amp; PRICE</span><h2>対応メニューと価格の目安</h2><p>よくご相談いただく工事の目安です。<span class="nb">商品のグレードや現場の状況で変わりますので、</span><span class="nb">まずはお気軽にお見積もりをご依頼ください。</span></p></div>
+      <div class="sec-title"><h2>対応メニューと価格の目安</h2><p>よくご相談いただく工事の目安です。<span class="nb">商品のグレードや現場の状況で変わりますので、</span><span class="nb">まずはお気軽にお見積もりをご依頼ください。</span></p></div>
       <div class="menu">
         <div class="m-card"><span class="cat">水回り</span><h3>キッチン交換</h3><p>システムキッチン（I型2550mm・普及グレード）への入れ替え。既存撤去・処分、給排水・電気工事を含みます。</p><div class="price">工事費込み<b>65</b>万円〜<small>目安工期：3〜4日</small></div></div>
         <div class="m-card"><span class="cat">水回り</span><h3>ユニットバス交換</h3><p>在来浴室・古いユニットバスから、1坪サイズのユニットバスへ。断熱浴槽・手すり付きのプランも人気です。</p><div class="price">工事費込み<b>90</b>万円〜<small>目安工期：4〜5日</small></div></div>
@@ -284,25 +275,10 @@
 
   <section id="works">
     <div class="wrap">
-      <div class="sec-title"><span>WORKS</span><h2>施工事例</h2><p>〇〇市内でのリフォーム事例の一部です。</p></div>
+      <div class="sec-title"><h2>施工事例</h2><p>〇〇市内でのリフォーム事例の一部です。</p></div>
       <div class="works">
         <article class="work">
-          <div class="ba">
-            <div class="ph before" role="img" aria-label="施工前の写真"><i class="lbl">BEFORE</i><span>施工前：タイル浴室</span></div>
-            <div class="ph after" role="img" aria-label="施工後の写真"><i class="lbl">AFTER</i><span>施工後：ユニットバス</span></div>
-          </div>
-          <div class="work-body">
-            <div class="area">〇〇市〇〇町・築30年・戸建て</div>
-            <h3>寒くて滑りやすいタイルのお風呂を、暖かいユニットバスに</h3>
-            <p>冬場のヒヤッとする寒さと、床のすべりが心配というご相談。断熱浴槽と手すり、段差の少ない出入口で、ご両親も安心して入れるお風呂になりました。</p>
-            <div class="spec"><span><b>工期</b>5日間</span><span><b>費用</b>約118万円（税込）</span></div>
-          </div>
-        </article>
-        <article class="work">
-          <div class="ba">
-            <div class="ph before" role="img" aria-label="施工前の写真"><i class="lbl">BEFORE</i><span>施工前：壁付けキッチン</span></div>
-            <div class="ph after" role="img" aria-label="施工後の写真"><i class="lbl">AFTER</i><span>施工後：新しいキッチン</span></div>
-          </div>
+          <figure class="work-photo"><img src="https://images.unsplash.com/photo-1773579305267-8d75e0af5be4?auto=format&fit=crop&w=800&q=70" alt="白を基調にしたアイランド型のキッチン" loading="lazy" width="800" height="533"><figcaption>写真はイメージです</figcaption></figure>
           <div class="work-body">
             <div class="area">〇〇市〇〇台・築25年・戸建て</div>
             <h3>収納が足りない台所を、引き出し式のシステムキッチンに</h3>
@@ -311,27 +287,28 @@
           </div>
         </article>
         <article class="work">
-          <div class="ba">
-            <div class="ph before" role="img" aria-label="施工前の写真"><i class="lbl">BEFORE</i><span>施工前：色あせた外壁</span></div>
-            <div class="ph after" role="img" aria-label="施工後の写真"><i class="lbl">AFTER</i><span>施工後：塗り替え後の外観</span></div>
-          </div>
-          <div class="work-body">
-            <div class="area">〇〇市〇〇・築18年・戸建て（延床32坪）</div>
-            <h3>ひび割れと色あせが気になる外壁を、屋根と同時に塗り替え</h3>
-            <p>壁を触ると白い粉がつく状態でした。ひび割れを補修してから、外壁はシリコン塗料、屋根は遮熱塗料で塗装。足場を一度で済ませて費用をおさえました。</p>
-            <div class="spec"><span><b>工期</b>16日間</span><span><b>費用</b>約148万円（税込）</span></div>
-          </div>
-        </article>
-        <article class="work">
-          <div class="ba">
-            <div class="ph before" role="img" aria-label="施工前の写真"><i class="lbl">BEFORE</i><span>施工前：和室6畳</span></div>
-            <div class="ph after" role="img" aria-label="施工後の写真"><i class="lbl">AFTER</i><span>施工後：洋室</span></div>
-          </div>
+          <figure class="work-photo"><img src="https://images.unsplash.com/photo-1660299478239-a6ca80b37e0e?auto=format&fit=crop&w=800&q=70" alt="フローリングと窓のある明るい洋室" loading="lazy" width="800" height="533"><figcaption>写真はイメージです</figcaption></figure>
           <div class="work-body">
             <div class="area">〇〇市〇〇町・築35年・戸建て</div>
             <h3>使っていなかった和室を、ベッドが置ける洋室に</h3>
             <p>膝が痛くて布団の上げ下ろしがつらい、というお悩みから。畳をフローリングに、押入れをクローゼットに変更し、入口の段差もなくしました。</p>
             <div class="spec"><span><b>工期</b>6日間</span><span><b>費用</b>約54万円（税込）</span></div>
+          </div>
+        </article>
+        <article class="work text-only">
+          <div class="work-body">
+            <div class="area">〇〇市〇〇町・築30年・戸建て</div>
+            <h3>寒くて滑りやすいタイルのお風呂を、暖かいユニットバスに</h3>
+            <p>冬場のヒヤッとする寒さと、床のすべりが心配というご相談。断熱浴槽と手すり、段差の少ない出入口で、ご両親も安心して入れるお風呂になりました。</p>
+            <div class="spec"><span><b>工期</b>5日間</span><span><b>費用</b>約118万円（税込）</span></div>
+          </div>
+        </article>
+        <article class="work text-only">
+          <div class="work-body">
+            <div class="area">〇〇市〇〇・築18年・戸建て（延床32坪）</div>
+            <h3>ひび割れと色あせが気になる外壁を、屋根と同時に塗り替え</h3>
+            <p>壁を触ると白い粉がつく状態でした。ひび割れを補修してから、外壁はシリコン塗料、屋根は遮熱塗料で塗装。足場を一度で済ませて費用をおさえました。</p>
+            <div class="spec"><span><b>工期</b>16日間</span><span><b>費用</b>約148万円（税込）</span></div>
           </div>
         </article>
       </div>
@@ -341,7 +318,7 @@
 
   <section class="navy" id="reason">
     <div class="wrap">
-      <div class="sec-title"><span>REASON</span><h2>まきの住まい工房が選ばれる理由</h2></div>
+      <div class="sec-title"><h2>まきの住まい工房が選ばれる理由</h2></div>
       <div class="reasons">
         <div class="reason"><div class="num">01</div><div><h3>相談から完成まで、同じ人が担当</h3><p>最初のご相談には代表がうかがい、工事も顔なじみの自社職人が行います。「言ったことが現場に伝わっていない」ということが起きにくい体制です。</p></div></div>
         <div class="reason"><div class="num">02</div><div><h3>内訳がわかる、書面のお見積もり</h3><p>「一式」でまとめず、商品代・工事費・処分費を分けて記載します。ご予算に合わせて、いくつかのプランを並べてご提案することもできます。</p></div></div>
@@ -374,23 +351,23 @@
 
   <section id="flow">
     <div class="wrap">
-      <div class="sec-title"><span>FLOW</span><h2>ご相談から完成までの流れ</h2></div>
+      <div class="sec-title"><h2>ご相談から完成までの流れ</h2></div>
       <ol class="flow">
-        <li><div class="st">STEP</div><div><h3>ご相談<small>無料</small></h3><p>LINE・お電話・フォームから。「何から考えればいいかわからない」という段階でも大丈夫です。</p></div></li>
-        <li><div class="st">STEP</div><div><h3>現地調査<small>無料・約1時間</small></h3><p>代表がご自宅にうかがい、寸法や傷み具合を確認します。ご要望やご予算もこのときにお聞きします。</p></div></li>
-        <li><div class="st">STEP</div><div><h3>プランとお見積もりのご提出</h3><p>1〜2週間ほどで、内訳つきのお見積もりと図面・商品資料をお持ちします。ショールームへのご案内もできます。</p></div></li>
-        <li><div class="st">STEP</div><div><h3>ご契約・ご近所へのごあいさつ</h3><p>内容にご納得いただけたらご契約です。着工前に、ご近所へ工事のごあいさつにうかがいます。</p></div></li>
-        <li><div class="st">STEP</div><div><h3>工事</h3><p>毎日の作業後には片付けと清掃を行い、その日の進み具合をご報告します。</p></div></li>
-        <li><div class="st">STEP</div><div><h3>完成・お引き渡し・アフター点検</h3><p>仕上がりを一緒に確認し、使い方をご説明してお引き渡し。保証書をお渡しし、その後も定期点検にうかがいます。</p></div></li>
+        <li><div class="st" aria-hidden="true"></div><div><h3>ご相談<small>無料</small></h3><p>LINE・お電話・フォームから。「何から考えればいいかわからない」という段階でも大丈夫です。</p></div></li>
+        <li><div class="st" aria-hidden="true"></div><div><h3>現地調査<small>無料・約1時間</small></h3><p>代表がご自宅にうかがい、寸法や傷み具合を確認します。ご要望やご予算もこのときにお聞きします。</p></div></li>
+        <li><div class="st" aria-hidden="true"></div><div><h3>プランとお見積もりのご提出</h3><p>1〜2週間ほどで、内訳つきのお見積もりと図面・商品資料をお持ちします。ショールームへのご案内もできます。</p></div></li>
+        <li><div class="st" aria-hidden="true"></div><div><h3>ご契約・ご近所へのごあいさつ</h3><p>内容にご納得いただけたらご契約です。着工前に、ご近所へ工事のごあいさつにうかがいます。</p></div></li>
+        <li><div class="st" aria-hidden="true"></div><div><h3>工事</h3><p>毎日の作業後には片付けと清掃を行い、その日の進み具合をご報告します。</p></div></li>
+        <li><div class="st" aria-hidden="true"></div><div><h3>完成・お引き渡し・アフター点検</h3><p>仕上がりを一緒に確認し、使い方をご説明してお引き渡し。保証書をお渡しし、その後も定期点検にうかがいます。</p></div></li>
       </ol>
     </div>
   </section>
 
   <section class="alt" id="greeting">
     <div class="wrap">
-      <div class="sec-title"><span>MESSAGE</span><h2>代表あいさつ</h2></div>
+      <div class="sec-title"><h2>代表あいさつ</h2></div>
       <div class="greet">
-        <div class="ph greet-photo" role="img" aria-label="代表の写真"><span>ここに代表の写真が入ります</span></div>
+        <figure class="greet-photo"><img src="https://images.unsplash.com/photo-1788296817269-8df0458ab799?auto=format&fit=crop&w=800&q=70" alt="作業台に並んだ大工道具" loading="lazy" width="800" height="1067"></figure>
         <div>
           <h3>「頼んでよかった」と、<br>10年後にも言っていただける仕事を。</h3>
           <p>父がこの町で大工として独立したのが1988年。私も高校を出てすぐ現場に入り、新築からリフォームまで、気づけば30年以上この仕事を続けています。</p>
@@ -409,7 +386,7 @@
 
   <section id="voice">
     <div class="wrap">
-      <div class="sec-title"><span>VOICE</span><h2>お客さまの声</h2></div>
+      <div class="sec-title"><h2>お客さまの声</h2></div>
       <div class="voices">
         <div class="voice"><div class="stars">★★★★★</div><h3>見積もりの説明がていねいでした</h3><p>3社に見積もりを取りましたが、内訳を一つずつ説明してくれたのはこちらだけでした。工事中も毎日声をかけてくれて安心できました。</p><div class="who">60代・ユニットバス交換</div></div>
         <div class="voice"><div class="stars">★★★★★</div><h3>LINEで気軽に相談できた</h3><p>トイレの水が止まらなくなり、写真を送ったらその日のうちに返事が。交換するか修理で済むか、正直に教えてもらえました。</p><div class="who">40代・トイレ交換</div></div>
@@ -421,7 +398,7 @@
 
   <section class="alt" id="warranty">
     <div class="wrap">
-      <div class="sec-title"><span>WARRANTY</span><h2>保証・アフターサービス</h2><p>工事が終わってからが、おつきあいの始まりです。</p></div>
+      <div class="sec-title"><h2>保証・アフターサービス</h2><p>工事が終わってからが、おつきあいの始まりです。</p></div>
       <div class="warranty">
         <div class="w-card"><div class="big">最長<b>10</b>年</div><h3>自社施工保証</h3><p>工事内容に応じて保証書を発行します（水回り工事5年、外壁塗装は塗料により最長10年）。保証の範囲は契約前に書面でご説明します。</p></div>
         <div class="w-card"><div class="big">1年・5年</div><h3>定期点検</h3><p>工事後1年目と5年目に、こちらからご連絡して点検にうかがいます。気になるところがあれば、その場でご相談ください。</p></div>
@@ -433,7 +410,7 @@
 
   <section id="area">
     <div class="wrap">
-      <div class="sec-title"><span>AREA</span><h2>対応エリア・会社概要</h2></div>
+      <div class="sec-title"><h2>対応エリア・会社概要</h2></div>
       <div class="area-grid">
         <div class="map">ここにGoogleマップが入ります<br>（Googleビジネスプロフィールと連動）</div>
         <div class="area-list">
@@ -458,7 +435,7 @@
 
   <section class="alt" id="faq">
     <div class="wrap" style="max-width:800px">
-      <div class="sec-title"><span>FAQ</span><h2>よくある質問</h2></div>
+      <div class="sec-title"><h2>よくある質問</h2></div>
       <div class="faq">
         <details><summary>見積もりだけでも大丈夫ですか？</summary><p>はい、もちろんです。お見積もり・現地調査は無料で、ご契約いただかなくても費用はかかりません。ほかの会社と比べていただいてもかまいません。</p></details>
         <details><summary>小さな修理（蛇口の水漏れ、網戸の張替えなど）もお願いできますか？</summary><p>はい、対応しています。出張費と作業費をあらかじめお伝えしてから作業しますので、まずはLINEで写真をお送りください。</p></details>
@@ -472,7 +449,7 @@
 
   <section class="contact" id="contact">
     <div class="wrap">
-      <div class="sec-title"><span>CONTACT</span><h2>無料お見積もり・ご相談</h2><p>「まだ迷っている」「だいたいの金額だけ知りたい」という段階でも大歓迎です。</p></div>
+      <div class="sec-title"><h2>無料お見積もり・ご相談</h2><p>「まだ迷っている」「だいたいの金額だけ知りたい」という段階でも大歓迎です。</p></div>
       <div class="c-grid">
         <div class="c-side">
         <div class="c-card">
@@ -511,6 +488,7 @@
   <p>〇〇県〇〇市〇〇町4-5-6　TEL 000-0000-0000</p>
   <p>© まきの住まい工房（架空の店舗）</p>
   <p>制作サンプル：のきさき</p>
+  <p>写真：<a href="https://unsplash.com/">Unsplash</a></p>
 </footer>
 
 <div class="fixed-bar">

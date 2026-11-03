@@ -11,258 +11,330 @@
 <meta property="og:title" content="のきさき｜小さなお店のホームページ・ネット予約・Googleマップ整備">
 <meta property="og:description" content="見つけてもらう、予約してもらう。そのあとの手間まで、まとめて軽くします。縛りなし・全国オンライン対応。">
 <meta property="og:url" content="https://nokisaki-web.github.io/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://images.unsplash.com/photo-1791039846758-cb993ed46071?auto=format&fit=crop&w=1200&h=630&q=70">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#fbfaf7; --paper:#fff; --ink:#1f2a37; --sub:#5b6573; --border:#e6e3dc;
-    --main:#2563eb; --main-d:#1d4ed8; --main-l:#e8efff; --accent:#f59e0b; --line:#06c755;
-    --r:16px;
+    --bg:#f6f3ee; --paper:#fffdf9; --ink:#232323; --sub:#5e5a54; --rule:#d9d2c6;
+    --ai:#24476b; --ai-d:#1a3550; --shu:#b9533a;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:"Noto Sans JP",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;font-size:16px}
+  body{font-family:"Zen Kaku Gothic New",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.9;font-size:16px;letter-spacing:.02em}
+  img{display:block;max-width:100%;height:auto;background:#e6dfd3;color:transparent}
   a{color:inherit}
-  h1,h2,h3{font-family:"M PLUS Rounded 1c","Noto Sans JP",sans-serif;line-height:1.45}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-  header{position:sticky;top:0;z-index:10;background:rgba(251,250,247,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
-  .head{display:flex;justify-content:space-between;align-items:center;height:62px}
-  .logo{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:20px;text-decoration:none;display:flex;align-items:center;gap:8px}
-  .logo i{display:inline-block;width:26px;height:26px;border-radius:8px;background:var(--main);position:relative}
-  .logo i::after{content:"";position:absolute;left:7px;top:6px;width:12px;height:9px;border:3px solid #fff;border-top:0;border-radius:0 0 6px 6px}
-  nav ul{display:flex;gap:22px;list-style:none;font-size:14px}
+  h1,h2,h3{font-family:"Shippori Mincho B1",serif;font-weight:700;line-height:1.5;letter-spacing:.04em}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .narrow{max-width:760px}
+
+  header{position:sticky;top:0;z-index:10;background:rgba(246,243,238,.96);border-bottom:1px solid var(--rule)}
+  .head{display:flex;justify-content:space-between;align-items:center;height:60px;gap:12px}
+  .logo{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:21px;text-decoration:none;display:flex;align-items:baseline;gap:10px}
+  .logo small{font-family:"Zen Kaku Gothic New",sans-serif;font-size:11px;color:var(--sub);font-weight:500}
+  nav ul{display:flex;gap:24px;list-style:none;font-size:14px}
   nav a{text-decoration:none;color:var(--sub)}
-  @media (max-width:820px){nav ul{display:none}}
-  .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 26px;font-weight:700;text-decoration:none;font-size:15px}
-  .btn-main{background:var(--main);color:#fff}
-  .btn-main:hover{background:var(--main-d)}
-  .btn-out{border:2px solid var(--main);color:var(--main);background:var(--paper)}
-  .btn-sm{padding:8px 16px;font-size:13px}
-  .hero{padding:64px 0 72px;background:radial-gradient(circle at 85% 10%,var(--main-l),transparent 55%)}
-  .hero .tag{display:inline-block;background:var(--paper);border:1px solid var(--border);border-radius:999px;padding:4px 14px;font-size:13px;color:var(--main-d);margin-bottom:18px}
-  .hero h1{font-size:clamp(28px,5.2vw,46px);margin-bottom:18px}
-  .hero h1 span{background:linear-gradient(transparent 62%,#fde68a 62%)}
-  .hero p{color:var(--sub);max-width:640px;margin-bottom:26px}
+  nav a:hover{color:var(--ai)}
+  @media (max-width:860px){nav ul{display:none}.logo small{display:none}}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:4px;padding:13px 24px;font-weight:700;text-decoration:none;font-size:15px}
+  .btn-main{background:var(--ai);color:#fff}
+  .btn-main:hover{background:var(--ai-d)}
+  .btn-line{border:1px solid var(--ink);color:var(--ink);background:transparent}
+  .btn-sm{padding:8px 14px;font-size:13px}
+
+  /* hero */
+  .hero{padding:56px 0 64px}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .hero .kicker{font-size:14px;color:var(--sub);margin-bottom:14px;padding-left:12px;border-left:3px solid var(--shu)}
+  .hero h1{font-size:clamp(28px,4.4vw,44px);margin-bottom:22px}
+  .hero p{color:var(--sub);margin-bottom:28px}
   .cta-row{display:flex;flex-wrap:wrap;gap:12px}
-  .flow3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
-  .flow3 div{background:var(--paper);border:1px solid var(--border);border-radius:var(--r);padding:20px;position:relative}
-  .flow3 b{display:block;font-family:"M PLUS Rounded 1c",sans-serif;font-size:18px}
-  .flow3 small{color:var(--sub);font-size:13px}
-  .flow3 em{font-style:normal;font-size:12px;font-weight:700;color:var(--accent)}
-  @media (max-width:700px){.flow3{grid-template-columns:1fr}}
-  section{padding:72px 0}
-  .alt{background:var(--paper)}
-  .ttl{text-align:center;margin-bottom:38px}
-  .ttl small{display:block;color:var(--main);font-weight:700;letter-spacing:.15em;font-size:12px}
-  .ttl h2{font-size:clamp(22px,3.6vw,30px)}
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .grid2{grid-template-columns:repeat(2,1fr)}
-  @media (max-width:760px){.grid3,.grid2{grid-template-columns:1fr}}
-  .card{background:var(--bg);border-radius:var(--r);padding:24px}
-  .card h3{font-size:18px;margin-bottom:6px}
-  .card p{color:var(--sub);font-size:15px}
-  .worry li{list-style:none;background:var(--paper);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:10px}
-  .worry li::before{content:"✓ ";color:var(--main);font-weight:700}
-  .worry{max-width:680px;margin:0 auto}
-  .price{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
-  .plan{background:var(--paper);border:1px solid var(--border);border-radius:var(--r);padding:26px 22px;display:flex;flex-direction:column}
-  .plan.rec{border:2px solid var(--main);position:relative}
-  .plan.rec::before{content:"おすすめ";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--main);color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:2px 14px}
-  .plan h3{font-size:19px}
-  .plan .yen{font-family:"M PLUS Rounded 1c",sans-serif;font-size:32px;font-weight:800;margin:6px 0 0}
-  .plan .yen small{font-size:14px;font-weight:500}
-  .plan .was{font-size:13px;color:var(--sub);text-decoration:line-through}
-  .plan ul{list-style:none;margin:14px 0 0;font-size:14px;color:var(--sub)}
-  .plan li{padding:6px 0;border-top:1px dashed var(--border)}
-  @media (max-width:820px){.price{grid-template-columns:1fr}}
-  .price-note{background:#fff8e6;border:1px solid #fde3a3;border-radius:12px;padding:14px 18px;margin-top:20px;font-size:14px}
-  .works{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  .work{display:block;text-decoration:none;background:var(--bg);border-radius:var(--r);overflow:hidden;border:1px solid var(--border)}
-  .work .thumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;color:#fff;font-size:20px}
-  .work .body{padding:14px 18px}
-  .work .body small{color:var(--sub)}
-  .t1{background:linear-gradient(135deg,#6f9a7a,#4f7d5c)}
-  .t2{background:linear-gradient(135deg,#3b5578,#1f3350)}
-  .t3{background:linear-gradient(135deg,#7cc8e8,#2b8fc4)}
-  .t4{background:linear-gradient(135deg,#4a4f55,#2a2d31)}
+  .hero figure{position:relative}
+  .hero figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+  .hero figcaption{position:absolute;left:-1px;bottom:24px;background:var(--paper);padding:10px 16px;font-size:13px;color:var(--sub);border:1px solid var(--rule);border-left:0}
+  @media (max-width:800px){
+    .hero{padding:28px 0 48px}
+    .hero-grid{grid-template-columns:1fr;gap:28px}
+    .hero figure{order:-1}
+    .hero figure img{aspect-ratio:16/10}
+    .hero figcaption{display:none}
+  }
+
+  section{padding:80px 0}
+  .paper{background:var(--paper);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .sec-h{margin-bottom:36px}
+  .sec-h p{font-size:13px;color:var(--shu);font-weight:700;margin-bottom:4px}
+  .sec-h h2{font-size:clamp(23px,3.4vw,32px)}
+  .sec-h .lead{color:var(--sub);margin-top:10px;font-size:15px}
+
+  /* 3 steps */
+  .flow{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+  .flow div{padding:22px 22px 6px 0}
+  .flow div+div{padding-left:22px;border-left:1px solid var(--rule)}
+  .flow b{font-family:"Shippori Mincho B1",serif;font-size:19px;display:block;margin-bottom:6px}
+  .flow span{display:block;font-size:13px;color:var(--shu);font-weight:700}
+  .flow small{font-size:14px;color:var(--sub);display:block}
+  @media (max-width:760px){.flow{grid-template-columns:1fr}.flow div,.flow div+div{padding:18px 0;border-left:0;border-bottom:1px solid var(--rule)}}
+
+  /* hello */
+  .hello{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:center}
+  .hello img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px}
+  .hello p+p{margin-top:14px}
+  .hello .sign{margin-top:18px;font-family:"Shippori Mincho B1",serif;font-size:18px}
+  @media (max-width:760px){.hello{grid-template-columns:1fr;gap:24px}.hello img{aspect-ratio:16/10}}
+
+  /* worries */
+  .worry{list-style:none;border-top:1px solid var(--rule)}
+  .worry li{padding:16px 0 16px 34px;border-bottom:1px solid var(--rule);position:relative}
+  .worry li::before{content:"";position:absolute;left:4px;top:27px;width:14px;height:1px;background:var(--shu)}
+  .answer{margin-top:28px;font-family:"Shippori Mincho B1",serif;font-size:20px}
+
+  /* promises */
+  .promise{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+  .promise article{display:grid;grid-template-columns:52px 1fr;gap:4px 16px;padding:26px 0;border-top:1px solid var(--rule)}
+  .promise .n{font-family:"Shippori Mincho B1",serif;font-size:34px;line-height:1;color:var(--ai);grid-row:span 2}
+  .promise h3{font-size:19px}
+  .promise p{color:var(--sub);font-size:15px}
+  @media (max-width:760px){.promise{grid-template-columns:1fr}}
+
+  /* price */
+  .price{width:100%;border-collapse:collapse;background:var(--paper)}
+  .price th,.price td{padding:18px 16px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+  .price thead th{font-size:13px;color:var(--sub);font-weight:500;border-bottom:1px solid var(--ink)}
+  .price td:first-child{width:28%}
+  .price td:first-child b{font-family:"Shippori Mincho B1",serif;font-size:18px;display:block}
+  .price .tag{display:inline-block;font-size:12px;color:#fff;background:var(--shu);padding:1px 8px;border-radius:2px;margin-top:4px}
+  .price .yen{font-size:24px;font-weight:700;white-space:nowrap}
+  .price .yen small{font-size:13px;font-weight:500}
+  .price s{font-size:13px;color:var(--sub);display:block}
+  .price ul{list-style:none;font-size:14px;color:var(--sub)}
+  .price li::before{content:"・"}
+  @media (max-width:700px){
+    .price thead{display:none}
+    .price,.price tbody,.price tr,.price td{display:block;width:100%}
+    .price tr{border-bottom:1px solid var(--rule);padding:14px 0}
+    .price td{border:0;padding:4px 14px}
+    .price td:first-child{width:100%}
+  }
+  .price-more{margin-top:24px;font-size:14px;color:var(--sub)}
+  .price-more dt{font-weight:700;color:var(--ink);margin-top:12px}
+
+  /* samples */
+  .works{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 28px}
+  .work{display:block;text-decoration:none}
+  .work img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px;transition:opacity .2s}
+  .work:hover img{opacity:.88}
+  .work .cat{font-size:13px;color:var(--shu);font-weight:700;margin-top:14px}
+  .work h3{font-size:19px;margin:2px 0 4px}
+  .work p{font-size:14px;color:var(--sub)}
+  .work .more{font-size:14px;color:var(--ai);font-weight:700;margin-top:6px;display:inline-block;border-bottom:1px solid currentColor}
   @media (max-width:640px){.works{grid-template-columns:1fr}}
-  .works-note{text-align:center;font-size:13px;color:var(--sub);margin-top:14px}
-  .steps{counter-reset:s;max-width:720px;margin:0 auto}
-  .steps li{list-style:none;counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
-  .steps li::before{content:counter(s);width:44px;height:44px;border-radius:50%;background:var(--main-l);color:var(--main-d);font-weight:800;display:flex;align-items:center;justify-content:center;font-family:"M PLUS Rounded 1c",sans-serif}
+  .note{font-size:13px;color:var(--sub);margin-top:24px}
+
+  /* steps */
+  .steps{list-style:none;counter-reset:s;border-top:1px solid var(--rule)}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:48px 1fr;gap:12px;padding:18px 0;border-bottom:1px solid var(--rule)}
+  .steps li::before{content:counter(s);font-family:"Shippori Mincho B1",serif;font-size:26px;color:var(--ai);line-height:1.2}
   .steps b{display:block}
   .steps small{color:var(--sub);font-size:14px}
-  .profile{display:grid;grid-template-columns:180px 1fr;gap:28px;align-items:center;max-width:820px;margin:0 auto}
-  .avatar{aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,var(--main-l),#c7d6ff);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--sub)}
-  .profile p{color:var(--sub);margin-top:8px}
-  .profile dl{display:grid;grid-template-columns:90px 1fr;gap:4px 12px;font-size:14px;margin-top:12px}
+
+  /* profile */
+  .profile dl{display:grid;grid-template-columns:96px 1fr;gap:8px 16px;font-size:15px;margin-top:18px;border-top:1px solid var(--rule);padding-top:18px}
   .profile dt{font-weight:700}
-  @media (max-width:640px){.profile{grid-template-columns:1fr}.avatar{max-width:140px;margin:0 auto}}
-  .faq{max-width:760px;margin:0 auto}
-  .faq details{background:var(--bg);border-radius:12px;margin-bottom:10px;padding:0 18px}
-  .faq summary{cursor:pointer;padding:16px 0;font-weight:700}
-  .faq details p{padding-bottom:16px;color:var(--sub)}
-  .contact{background:var(--main);color:#fff;border-radius:24px;padding:48px 24px;text-align:center}
-  .contact h2{font-size:clamp(22px,3.6vw,30px)}
-  .contact p{opacity:.92;margin:10px 0 24px}
-  .contact .btn-out{background:transparent;color:#fff;border-color:#fff}
-  .contact .btn-main{background:#fff;color:var(--main-d)}
-  footer{text-align:center;padding:32px 0;color:var(--sub);font-size:13px}
+  .profile dd{color:var(--sub)}
+
+  /* faq */
+  .faq details{border-bottom:1px solid var(--rule)}
+  .faq details:first-child{border-top:1px solid var(--rule)}
+  .faq summary{cursor:pointer;padding:18px 0;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  .faq summary::after{content:"＋";color:var(--sub);font-weight:400}
+  .faq details[open] summary::after{content:"−"}
+  .faq details p{padding-bottom:18px;color:var(--sub)}
+
+  /* contact */
+  .contact{position:relative;color:#fff;padding:88px 0;background:#1d2c3b}
+  .contact::before{content:"";position:absolute;inset:0;background:url("https://images.unsplash.com/photo-1678613077539-13d3c07e2d52?auto=format&fit=crop&w=1600&q=60") center/cover;opacity:.28}
+  .contact .wrap{position:relative}
+  .contact h2{font-size:clamp(24px,3.6vw,34px)}
+  .contact p{opacity:.92;margin:12px 0 26px;max-width:560px}
+  .contact .btn-main{background:#fff;color:var(--ai-d)}
+
+  footer{padding:28px 0;color:var(--sub);font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap head">
-    <a class="logo" href="#top"><i></i>のきさき</a>
+    <a class="logo" href="#top">のきさき<small>小さなお店のWeb担当</small></a>
     <nav><ul>
-      <li><a href="#service">4つの約束</a></li>
+      <li><a href="#promise">できること</a></li>
       <li><a href="#price">料金</a></li>
-      <li><a href="#works">制作サンプル</a></li>
-      <li><a href="#profile">プロフィール</a></li>
+      <li><a href="#works">見本</a></li>
+      <li><a href="#profile">担当者</a></li>
       <li><a href="#faq">よくある質問</a></li>
     </ul></nav>
-    <a class="btn btn-main btn-sm" href="https://forms.gle/sXnHPJonqLxmyJr76" target="_blank" rel="noopener">無料で相談する</a>
+    <a class="btn btn-main btn-sm" href="https://forms.gle/sXnHPJonqLxmyJr76" target="_blank" rel="noopener">相談する</a>
   </div>
 </header>
 
 <main id="top">
   <section class="hero">
-    <div class="wrap">
-      <span class="tag">小さなお店のWeb集客・全国オンライン対応</span>
-      <h1>見つけてもらう、予約してもらう。<br><span>そのあとの手間</span>まで、<br>まとめて軽くします。</h1>
-      <p>ホームページを作って終わりにしません。Googleマップとネット予約で新しいお客さんの入口を整え、予約のあとの台帳づけや前日のお知らせは自動に。更新はLINEで写真と一言を送るだけです。</p>
-      <div class="cta-row">
-        <a class="btn btn-main" href="https://forms.gle/sXnHPJonqLxmyJr76" target="_blank" rel="noopener">無料で相談する</a>
-        <a class="btn btn-out" href="#price">料金を見る</a>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">整体院・リフォーム・ハウスクリーニング・パーソナルジムのWeb担当</p>
+        <h1>見つけてもらう。<br>予約してもらう。<br>そのあとの手間も、<br>軽くする。</h1>
+        <p>ホームページを作って終わりにはしません。Googleマップとネット予約で新しいお客さんの入口を整え、予約のあとの台帳づけや前日のお知らせは自動に。更新は、LINEで写真と一言を送ってもらうだけです。</p>
+        <div class="cta-row">
+          <a class="btn btn-main" href="https://forms.gle/sXnHPJonqLxmyJr76" target="_blank" rel="noopener">無料で相談する</a>
+          <a class="btn btn-line" href="#works">見本を見る</a>
+        </div>
       </div>
-      <div class="flow3">
-        <div><em>STEP 1</em><b>見つけてもらう</b><small>Googleマップの写真・料金・営業時間を整え、ホームページで安心してもらう</small></div>
-        <div><em>STEP 2</em><b>予約してもらう</b><small>24時間のネット予約。Googleマップの「予約」ボタンからも申し込める</small></div>
-        <div><em>STEP 3</em><b>そのあとを軽くする</b><small>台帳への記録、前日のお知らせ、次回の案内を自動に。常連さんとはLINEでつながる</small></div>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1791039846758-cb993ed46071?auto=format&fit=crop&w=1000&q=70" alt="町かどにある小さなお店" width="1000" height="1250">
+        <figcaption>町のお店の「のきさき」を、ネットにも。</figcaption>
+      </figure>
+    </div>
+    <div class="wrap" style="margin-top:56px">
+      <div class="flow">
+        <div><span>1</span><b>見つけてもらう</b><small>Googleマップの写真・料金・営業時間を整えて、ホームページで安心してもらう。</small></div>
+        <div><span>2</span><b>予約してもらう</b><small>24時間のネット予約。Googleマップの「予約」ボタンからも申し込めるように。</small></div>
+        <div><span>3</span><b>そのあとを軽くする</b><small>台帳への記録、前日のお知らせ、次回の案内を自動に。常連さんとはLINEで。</small></div>
       </div>
     </div>
   </section>
 
-  <section class="alt">
-    <div class="wrap">
-      <div class="ttl"><small>WORRIES</small><h2>こんなお悩み、ありませんか？</h2></div>
+  <section class="paper">
+    <div class="wrap hello">
+      <img src="https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?auto=format&fit=crop&w=900&q=70" alt="ノートパソコンと観葉植物のある作業机" loading="lazy" width="900" height="900">
+      <div>
+        <div class="sec-h" style="margin-bottom:18px"><p>はじめに</p><h2>小さなお店の、<br>ネットまわりの係です。</h2></div>
+        <p>はじめまして、のきさきの山本です。大阪でシステムエンジニアをしています。本業では、手作業の多い仕事を仕組みで減らすことに取り組んできました。</p>
+        <p>町のお店を見ていると、腕は確かなのに「ネットで見つからない」「電話に出られず予約を逃す」「事務作業で夜が終わる」という話をよく聞きます。そこを、お店の負担を増やさずに整えるのが、のきさきの仕事です。</p>
+        <p class="sign">のきさき 担当・山本</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-h"><p>よく聞くお悩み</p><h2>こんなこと、ありませんか。</h2></div>
       <ul class="worry">
         <li>ホームページを作ったけれど、更新が面倒で止まっている</li>
         <li>お金をかけたのに、効果があったのか分からない</li>
-        <li>電話での予約受付で、施術や作業の手が止まる</li>
+        <li>電話で予約を受けていて、施術や作業の手が止まる</li>
         <li>予約の管理や見積もりづくりで、夜まで事務作業をしている</li>
-        <li>月額制のサービスは、縛りや解約後のことが心配</li>
+        <li>月額制のサービスは、縛りや解約したあとのことが心配</li>
       </ul>
+      <p class="answer">どれも、仕組みで軽くできます。</p>
     </div>
   </section>
 
-  <section id="service">
+  <section class="paper" id="promise">
     <div class="wrap">
-      <div class="ttl"><small>PROMISE</small><h2>のきさきの4つの約束</h2></div>
-      <div class="grid3 grid2">
-        <div class="card"><h3>① 予約のあとまで、手間を減らします</h3><p>予約や問い合わせを台帳に自動で記録。前日のお知らせや、しばらく来ていない方への案内も自動で送れます。見積書の下書きづくりも自動にできます。</p></div>
-        <div class="card"><h3>② 更新は、LINEで送るだけ</h3><p>写真と一言をLINEで送っていただければ、文章を整えてホームページとGoogleマップに載せます。</p></div>
-        <div class="card"><h3>③ 毎月の数字を、1枚で</h3><p>電話ボタンが押された回数、予約の数、Googleマップで道順を調べた回数を、毎月1枚にまとめてお伝えします。</p></div>
-        <div class="card"><h3>④ 縛りなし。サイトはお店のもの</h3><p>月額プランはいつでも解約できます。解約後もサイトのデータはお渡しし、ドメインもお店のお名前で持っていただきます。</p></div>
+      <div class="sec-h"><p>のきさきの約束</p><h2>作って終わり、にしない4つのこと</h2></div>
+      <div class="promise">
+        <article><span class="n">一</span><h3>予約のあとまで、手間を減らす</h3><p>予約や問い合わせを台帳に自動で記録。前日のお知らせや、しばらく来ていない方への案内も自動で送れます。見積書の下書きも自動で作れます。</p></article>
+        <article><span class="n">二</span><h3>更新は、LINEで送るだけ</h3><p>写真と一言をLINEで送っていただければ、文章を整えてホームページとGoogleマップに載せます。</p></article>
+        <article><span class="n">三</span><h3>毎月の数字を、紙1枚で</h3><p>電話ボタンが押された回数、予約の数、Googleマップで道順を調べた回数を、毎月1枚にまとめてお伝えします。</p></article>
+        <article><span class="n">四</span><h3>縛りなし。サイトはお店のもの</h3><p>月額プランはいつでも解約できます。解約後もデータはお渡しし、ドメインもお店のお名前で持っていただきます。</p></article>
       </div>
     </div>
   </section>
 
-  <section class="alt" id="price">
+  <section id="price">
     <div class="wrap">
-      <div class="ttl"><small>PRICE</small><h2>料金（税込）</h2></div>
-      <div class="price">
-        <div class="plan">
-          <h3>スタートセット</h3>
-          <div class="was">通常 49,800円</div>
-          <div class="yen">29,800<small>円</small></div>
-          <ul>
-            <li>1ページのスマホ対応サイト</li>
-            <li>Googleマップの整備</li>
-            <li>ネット予約の入口づくり（無料の予約システム）</li>
-            <li>最短1週間で公開</li>
-          </ul>
-        </div>
-        <div class="plan rec">
-          <h3>まるごとセット</h3>
-          <div class="was">通常 89,800円</div>
-          <div class="yen">49,800<small>円</small></div>
-          <ul>
-            <li>業種別の5ページサイト（WordPress）</li>
-            <li>Googleマップの整備</li>
-            <li>ネット予約の入口づくり＋LINEのメニュー設定</li>
-            <li>12回の分割払いもOK（月7,980円）</li>
-            <li>最短2週間で公開</li>
-          </ul>
-        </div>
-        <div class="plan">
-          <h3>月額おまかせプラン</h3>
-          <div class="was" style="text-decoration:none">縛りなし・いつでも解約OK</div>
-          <div class="yen">7,980<small>円／月</small></div>
-          <ul>
-            <li>LINEで送るだけ更新（月4回）</li>
-            <li>Googleマップへの投稿（月4回）</li>
-            <li>口コミへの返信文の下書き</li>
-            <li>毎月の数字レポート</li>
-            <li>管理だけの見守りプランは月2,980円</li>
-          </ul>
-        </div>
-      </div>
-      <div class="price-note"><b>単品もあります</b>：Googleマップ整備 9,800円／ネット予約の入口づくり 19,800円／1ページサイト 29,800円<br><b>手間を減らす自動化</b>：予約・問い合わせの台帳 14,800円／前日のお知らせ・再来店の案内 19,800円／見積書の自動作成 29,800円〜<br><b>実績づくり価格は先着3店舗</b>までです（制作実績として掲載させていただくことと、ご感想をいただくことが条件）。ドメイン・サーバー代（年1〜2万円ほど）は実費です。</div>
+      <div class="sec-h"><p>料金</p><h2>料金（税込）</h2><p class="lead">いまは制作実績を作っている時期のため、先着3店舗は下げた料金でお受けしています。</p></div>
+      <table class="price">
+        <thead><tr><th>プラン</th><th>料金</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>スタートセット</b><span class="tag">先着3店舗</span></td>
+            <td><s>通常 49,800円</s><span class="yen">29,800<small>円</small></span></td>
+            <td><ul><li>1ページのスマホ対応サイト</li><li>Googleマップの整備</li><li>ネット予約の入口づくり（無料の予約システム）</li><li>最短1週間で公開</li></ul></td>
+          </tr>
+          <tr>
+            <td><b>まるごとセット</b><span class="tag">先着3店舗</span></td>
+            <td><s>通常 89,800円</s><span class="yen">49,800<small>円</small></span></td>
+            <td><ul><li>業種別の5ページサイト（WordPress・ご自身でも更新できます）</li><li>Googleマップの整備</li><li>ネット予約の入口づくり＋LINEのメニュー設定</li><li>12回の分割払いもできます（月7,980円）</li><li>最短2週間で公開</li></ul></td>
+          </tr>
+          <tr>
+            <td><b>おまかせプラン</b><br><small style="color:var(--sub)">月額・縛りなし</small></td>
+            <td><span class="yen">7,980<small>円／月</small></span></td>
+            <td><ul><li>LINEで送るだけ更新（月4回）</li><li>Googleマップへの投稿（月4回）</li><li>口コミへの返信文の下書き</li><li>毎月の数字レポート</li><li>管理だけの見守りプランは月2,980円</li></ul></td>
+          </tr>
+        </tbody>
+      </table>
+      <dl class="price-more">
+        <dt>単品</dt><dd>Googleマップ整備 9,800円／ネット予約の入口づくり 19,800円／1ページサイト 29,800円</dd>
+        <dt>手間を減らす自動化</dt><dd>予約・問い合わせの台帳 14,800円／前日のお知らせ・再来店の案内 19,800円／見積書の自動作成 29,800円〜</dd>
+        <dt>ご注意</dt><dd>先着3店舗の料金は、制作実績として掲載させていただくことと、ご感想をいただくことが条件です。ドメイン・サーバー代（年1〜2万円ほど）は実費です。</dd>
+      </dl>
     </div>
   </section>
 
-  <section id="works">
+  <section class="paper" id="works">
     <div class="wrap">
-      <div class="ttl"><small>SAMPLES</small><h2>業種別の制作サンプル</h2></div>
+      <div class="sec-h"><p>業種別の見本</p><h2>こんなサイトをお作りします</h2></div>
       <div class="works">
-        <a class="work" href="samples/seitai/"><div class="thumb t1">整体院</div><div class="body"><b>からだ整え処 こもれび整体院</b><br><small>24時間ネット予約を入口に、予約後はLINEで前日のお知らせと次回の予約</small></div></a>
-        <a class="work" href="samples/reform/"><div class="thumb t2">リフォーム・工務店</div><div class="body"><b>まきの住まい工房</b><br><small>価格の目安と施工事例を見せ、LINEで写真を送るだけの概算見積もり</small></div></a>
-        <a class="work" href="samples/cleaning/"><div class="thumb t3">ハウスクリーニング</div><div class="body"><b>おそうじ屋しずく</b><br><small>明朗な料金表からネット予約。料金が決めにくい場所はLINEで写真見積もり</small></div></a>
-        <a class="work" href="samples/gym/"><div class="thumb t4">パーソナルジム</div><div class="body"><b>パーソナルジム ミチノリ</b><br><small>体験レッスンをネット予約で受け、入会後の予約変更や食事アドバイスはLINEで</small></div></a>
+        <a class="work" href="samples/seitai/">
+          <img src="https://images.unsplash.com/photo-1768507423533-b87b62769758?auto=format&fit=crop&w=900&q=70" alt="整体の施術風景" loading="lazy" width="900" height="600">
+          <p class="cat">整体院・整骨院</p><h3>からだ整え処 こもれび整体院</h3>
+          <p>24時間ネット予約を入口に、予約後はLINEで前日のお知らせと次回の予約。</p><span class="more">見本を開く</span>
+        </a>
+        <a class="work" href="samples/reform/">
+          <img src="https://images.unsplash.com/photo-1779031242515-205111711b23?auto=format&fit=crop&w=900&q=70" alt="工房で木材を加工する職人" loading="lazy" width="900" height="600">
+          <p class="cat">リフォーム・工務店</p><h3>まきの住まい工房</h3>
+          <p>価格の目安と施工事例を見せて、LINEで写真を送るだけの概算見積もり。</p><span class="more">見本を開く</span>
+        </a>
+        <a class="work" href="samples/cleaning/">
+          <img src="https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?auto=format&fit=crop&w=900&q=70" alt="明るいリビングの床を掃除する様子" loading="lazy" width="900" height="600">
+          <p class="cat">ハウスクリーニング</p><h3>おそうじ屋しずく</h3>
+          <p>分かりやすい料金表からネット予約。料金が決めにくい場所はLINEで写真見積もり。</p><span class="more">見本を開く</span>
+        </a>
+        <a class="work" href="samples/gym/">
+          <img src="https://images.unsplash.com/photo-1674834727206-4bc272bfd8da?auto=format&fit=crop&w=900&q=70" alt="トレーニング器具が並ぶジム" loading="lazy" width="900" height="600">
+          <p class="cat">パーソナルジム</p><h3>パーソナルジム ミチノリ</h3>
+          <p>体験レッスンをネット予約で受けて、入会後の予約変更や食事のアドバイスはLINEで。</p><span class="more">見本を開く</span>
+        </a>
       </div>
-      <p class="works-note">※いずれも架空のお店で作った見本です。実際の制作では、お店の写真と言葉で作ります。</p>
+      <p class="note">※どれも架空のお店で作った見本です。写真は素材写真で、実際の制作ではお店の写真と言葉で作ります。</p>
     </div>
   </section>
 
-  <section class="alt">
-    <div class="wrap">
-      <div class="ttl"><small>FLOW</small><h2>ご相談から公開まで</h2></div>
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-h"><p>進め方</p><h2>ご相談から公開まで</h2></div>
       <ol class="steps">
         <li><div><b>無料相談（オンライン30分）</b><small>今のお悩みと、どんなお客さんに来てほしいかをうかがいます。</small></div></li>
         <li><div><b>ご提案・お見積もり</b><small>内容と金額をメールでお送りします。この時点ではお金はかかりません。</small></div></li>
-        <li><div><b>ご契約・着手金（半額）</b><small>写真やメニュー表をLINEかメールで送っていただきます。</small></div></li>
+        <li><div><b>ご契約・着手金（半額）</b><small>写真やメニュー表を、LINEかメールで送っていただきます。</small></div></li>
         <li><div><b>制作・確認</b><small>途中で見ていただき、2〜3回修正します。</small></div></li>
         <li><div><b>公開・残りのお支払い</b><small>使い方を15分ほどでご説明します。</small></div></li>
       </ol>
     </div>
   </section>
 
-  <section id="profile">
-    <div class="wrap">
-      <div class="ttl"><small>PROFILE</small><h2>プロフィール</h2></div>
-      <div class="profile">
-        <div class="avatar">写真またはイラスト</div>
-        <div>
-          <h3>のきさき 担当・山本</h3>
-          <p>大阪在住のシステムエンジニアです。本業では製造業の会社でデジタル化の推進を担当し、システムの導入や業務の自動化に取り組んでいます。担当した業務では、手作業の量を月あたり約半分に減らしました。その経験を活かして、小さなお店の「見つけてもらう・予約してもらう」と、予約のあとの手間を減らすお手伝いをしています。</p>
-          <dl>
-            <dt>制作</dt><dd>HTML/CSS、WordPress</dd>
-            <dt>そのほか</dt><dd>Python、VBA、生成AIを使った業務の効率化</dd>
-            <dt>対応時間</dt><dd>平日の夜と土日（メッセージは24時間以内にお返事します）</dd>
-          </dl>
-        </div>
-      </div>
+  <section class="paper" id="profile">
+    <div class="wrap narrow profile">
+      <div class="sec-h" style="margin-bottom:16px"><p>担当者</p><h2>のきさき 担当・山本</h2></div>
+      <p>大阪在住のシステムエンジニアです。本業では製造業の会社でデジタル化の推進を担当し、システムの導入や業務の自動化に取り組んでいます。担当した業務では、手作業の量を月あたり約半分に減らしました。その経験を活かして、小さなお店の「見つけてもらう・予約してもらう」と、予約のあとの手間を減らすお手伝いをしています。</p>
+      <dl>
+        <dt>制作</dt><dd>HTML/CSS、WordPress</dd>
+        <dt>そのほか</dt><dd>Python、VBA、生成AIを使った業務の効率化</dd>
+        <dt>対応時間</dt><dd>平日の夜と土日（メッセージは24時間以内にお返事します）</dd>
+      </dl>
     </div>
   </section>
 
-  <section class="alt" id="faq">
-    <div class="wrap">
-      <div class="ttl"><small>FAQ</small><h2>よくある質問</h2></div>
+  <section id="faq">
+    <div class="wrap narrow">
+      <div class="sec-h"><p>よくある質問</p><h2>よくある質問</h2></div>
       <div class="faq">
         <details><summary>パソコンが苦手でも大丈夫ですか？</summary><p>大丈夫です。やりとりはLINEやメールで、設定が必要なところは画面を共有しながら一緒に進めます。</p></details>
         <details><summary>遠方でも頼めますか？</summary><p>はい。打ち合わせから納品まですべてオンラインで行うので、全国どこからでもご依頼いただけます。</p></details>
@@ -273,19 +345,15 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section class="contact" id="contact">
     <div class="wrap">
-      <div class="contact">
-        <h2>まずは無料でご相談ください</h2>
-        <p>「うちの場合はどうなる？」だけでも大丈夫です。売り込みのお電話はしません。</p>
-        <div class="cta-row" style="justify-content:center">
-          <a class="btn btn-main" href="https://forms.gle/sXnHPJonqLxmyJr76" target="_blank" rel="noopener">相談フォームを開く（1分）</a>
-        </div>
-      </div>
+      <h2>まずは、話を聞かせてください。</h2>
+      <p>「うちの場合はどうなる？」だけでも大丈夫です。フォームは1分ほどで送れます。売り込みのお電話はしません。</p>
+      <a class="btn btn-main" href="https://forms.gle/sXnHPJonqLxmyJr76" target="_blank" rel="noopener">相談フォームを開く</a>
     </div>
   </section>
 </main>
 
-<footer>© のきさき</footer>
+<footer><div class="wrap"><span>© のきさき</span><span>写真：Unsplash</span></div></footer>
 </body>
 </html>
