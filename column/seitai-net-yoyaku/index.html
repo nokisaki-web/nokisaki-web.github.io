@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>整体院のネット予約を、月0円で始める方法（Googleマップの予約ボタンまで）｜のきさき</title>
+<meta name="description" content="電話予約だけの整体院・整骨院が、無料プランの予約システムでネット予約を始め、Googleマップに予約ボタンをつけるまでの流れをまとめました。">
+<link rel="canonical" href="https://nokisaki-web.github.io/column/seitai-net-yoyaku/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="のきさき">
+<meta property="og:title" content="整体院のネット予約を、月0円で始める方法（Googleマップの予約ボタンまで）">
+<meta property="og:description" content="電話予約だけの整体院・整骨院が、無料プランの予約システムでネット予約を始め、Googleマップに予約ボタンをつけるまでの流れをまとめました。">
+<meta property="og:url" content="https://nokisaki-web.github.io/column/seitai-net-yoyaku/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f3ee;--paper:#fffdf9;--ink:#232323;--sub:#5e5a54;--rule:#d9d2c6;--ai:#24476b;--ai-d:#1a3550;--shu:#b9533a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Zen Kaku Gothic New",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.95;font-size:16px;letter-spacing:.02em}
+img{display:block;max-width:100%;height:auto;background:#e6dfd3;color:transparent}
+a{color:var(--ai)}
+h1,h2,h3{font-family:"Shippori Mincho B1",serif;font-weight:700;line-height:1.5;letter-spacing:.04em}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+header{background:rgba(246,243,238,.96);border-bottom:1px solid var(--rule)}
+.head{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;height:60px;gap:12px}
+.logo{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:21px;text-decoration:none;color:var(--ink)}
+.head nav{display:flex;gap:18px;font-size:14px;align-items:center}
+.head nav a{color:var(--sub);text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:4px;padding:13px 24px;font-weight:700;text-decoration:none;font-size:15px;background:var(--ai);color:#fff}
+.btn:hover{background:var(--ai-d)}
+.btn-sm{padding:8px 14px;font-size:13px;color:#fff !important}
+@media (max-width:600px){.head nav .hide-sp{display:none}}
+.crumb{font-size:13px;color:var(--sub);padding:18px 0 0}
+.crumb a{color:var(--sub)}
+article{padding:28px 0 64px}
+article .meta{font-size:13px;color:var(--shu);font-weight:700}
+article h1{font-size:clamp(24px,4vw,34px);margin:6px 0 18px}
+article .lead{color:var(--sub);margin-bottom:28px}
+article h2{font-size:22px;margin:44px 0 12px;padding-top:18px;border-top:1px solid var(--ink)}
+article h3{font-size:18px;margin:26px 0 8px}
+article p+p{margin-top:14px}
+article ul,article ol{margin:12px 0 12px 1.4em}
+article li{margin:6px 0}
+article figure{margin:24px 0}
+article figure img{width:100%;aspect-ratio:16/9;object-fit:cover}
+article figcaption{font-size:12px;color:var(--sub);margin-top:6px}
+.box{background:var(--paper);border:1px solid var(--rule);padding:18px 20px;margin:20px 0}
+.box b{display:block;margin-bottom:4px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px;background:var(--paper)}
+th,td{border-bottom:1px solid var(--rule);padding:10px 12px;text-align:left;vertical-align:top}
+th{font-weight:700;background:#efe9df}
+.cta{background:#1d2c3b;color:#fff;padding:32px 24px;margin-top:48px}
+.cta h2{border:0;margin:0 0 8px;padding:0;font-size:22px;color:#fff}
+.cta p{opacity:.92;margin-bottom:18px}
+.cta .btn{background:#fff;color:var(--ai-d)}
+.cta small{display:block;margin-top:14px;opacity:.85}
+.cta small a{color:#fff}
+.list a.item{display:block;text-decoration:none;color:var(--ink);padding:22px 0;border-bottom:1px solid var(--rule)}
+.list a.item small{color:var(--shu);font-weight:700;font-size:13px}
+.list a.item b{display:block;font-family:"Shippori Mincho B1",serif;font-size:19px;line-height:1.5}
+.list a.item span{display:block;color:var(--sub);font-size:14px;margin-top:4px}
+footer{padding:28px 0;color:var(--sub);font-size:13px;border-top:1px solid var(--rule)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+footer a{color:var(--sub)}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"整体院のネット予約を、月0円で始める方法（Googleマップの予約ボタンまで）","datePublished":"2026-11-03","author":{"@type":"Organization","name":"のきさき"}}</script>
+</head>
+<body>
+<header><div class="head"><a class="logo" href="../../">のきさき</a><nav><a class="hide-sp" href="../../column/">お役立ち記事</a><a class="hide-sp" href="../../shindan/">Googleマップ診断</a><a class="btn btn-sm" href="https://forms.gle/sXnHPJonqLxmyJr76" target="_blank" rel="noopener">相談する</a></nav></div></header>
+<main>
+<div class="wrap"><p class="crumb"><a href="../../">のきさき</a> ＞ <a href="../">お役立ち記事</a></p>
+<article><p class="meta">ネット予約｜2026-11-03</p><h1>整体院のネット予約を、月0円で始める方法（Googleマップの予約ボタンまで）</h1><p class="lead">施術中は電話に出られない。夜に電話がかかってきても取れない。そんな整体院・整骨院でも、無料の予約システムを使えば月0円でネット予約を始められます。この記事では、選び方からGoogleマップに予約ボタンをつけるまでの流れを紹介します。</p>
+<h2>電話だけの予約で、逃しているかもしれないお客さん</h2>
+<p>からだの不調で整体院を探す人は、仕事が終わった夜や休みの日にスマホで探すことが多いものです。そのとき電話しか予約の方法がないと、</p>
+<ul><li>営業時間外なので、明日かけようと思って忘れる</li><li>施術中で電話に出てもらえず、ほかの院に予約する</li><li>そもそも電話をかけるのが苦手</li></ul>
+<p>といった理由で、予約の一歩手前で離れてしまいます。<b>24時間受け付けられるネット予約があるだけで、この取りこぼしを減らせます。</b></p>
+<figure><img src="https://images.unsplash.com/photo-1768507423533-b87b62769758?auto=format&fit=crop&w=1200&q=70" alt="整体の施術の様子" width="1200" height="675" loading="lazy"><figcaption>写真はイメージです</figcaption></figure>
+<h2>予約サイト（ポータル）と、自分の予約システムの違い</h2>
+<table><tr><th></th><th>予約サイト（ポータル）</th><th>自分の予約システム</th></tr>
+<tr><td>費用</td><td>掲載料や、予約1件ごとの手数料がかかることが多い</td><td>無料プランで始められるものが多い</td></tr>
+<tr><td>集客</td><td>予約サイトの中で見つけてもらえる</td><td>自分で入口（Googleマップ・ホームページ・LINE）を作る</td></tr>
+<tr><td>お客さんの情報</td><td>予約サイトのルールに従う</td><td>お店で管理できる</td></tr></table>
+<p>どちらが正解というより、<b>「予約サイトに払う手数料を減らしたい」「Googleマップから来る人を直接予約につなげたい」なら、自分の予約システムを持っておく</b>のがおすすめです。</p>
+<h2>無料プランを選ぶときの4つのチェック</h2>
+<ol>
+<li><b>無料プランで、スタッフ1人・メニュー数件が使えるか</b>（小さな院ならこれで足ります）</li>
+<li><b>予約が入ったらメールで通知が来るか</b></li>
+<li><b>前日のお知らせ（リマインド）を送れるか</b>：無断キャンセルが減ります</li>
+<li><b>Googleマップの予約ボタンとつなげられるか</b>：「Googleで予約」に対応しているか、予約ページのURLを登録できればOKです</li>
+</ol>
+<div class="box"><b>注意</b>無料プランの内容は、サービスごとに変わることがあります。申し込む前に、公式サイトで「無料プランでできること」を確認してください。</div>
+<h2>始めるまでの流れ</h2>
+<ol>
+<li><b>メニューを2〜3個に絞る</b>：「初回（検査＋施術）60分」「2回目以降 40分」など。初めから全部載せなくて大丈夫です</li>
+<li><b>受け付ける時間を決める</b>：電話予約と重ならないよう、ネットで受ける枠を決めます</li>
+<li><b>予約システムに登録して、メニューと時間を入れる</b></li>
+<li><b>自分で1回、テスト予約をしてみる</b>：スマホで迷わず予約できるか確かめます</li>
+<li><b>入口をつなぐ</b>：Googleマップの予約リンク、ホームページの「ネット予約」ボタン、LINEのメニューに、同じ予約ページを載せます</li>
+</ol>
+<h2>Googleマップに予約ボタンをつける</h2>
+<p>Googleビジネスプロフィールの編集画面で、予約ページのURLを登録できます（項目名は「予約」「予約リンク」など）。登録すると、Googleマップのお店の情報に予約への入口が表示されます。</p>
+<p>予約システムによっては「Googleで予約」に対応していて、Googleマップの中で予約まで終わる形にもできます。</p>
+<h2>LINEは「予約のあと」に使うと便利</h2>
+<p>LINEで予約を受けることもできますが、空き時間のやりとりが増えて、かえって手間になることがあります。おすすめは、</p>
+<ul><li><b>新しいお客さん</b>：ネット予約（空いている時間をその場で選べる）</li><li><b>通ってくれているお客さん</b>：LINE（次回の予約、前日のお知らせ、ちょっとした相談）</li></ul>
+<p>という使い分けです。</p>
+<h2>まとめ</h2>
+<p>ネット予約は、無料プランで今日からでも始められます。大事なのは、予約ページを作ったあとに<b>Googleマップ・ホームページ・LINEの3か所につなぐこと</b>です。</p>
+<p>設定に時間をかけられない場合は、のきさきの「予約の入口づくり（19,800円）」で、画面を共有しながら一緒に設定します。パスワードはお預かりしません。整体院向けの見本サイトは<a href="../../samples/seitai/">こちら</a>です。</p>
+<div class="cta"><h2>うちの場合はどうなる？</h2><p>お店のGoogleマップとホームページを見て、気づいた点をA4・1枚の「改善メモ」にして無料でお送りします。売り込みのお電話はしません。</p><a class="btn" href="https://forms.gle/sXnHPJonqLxmyJr76" target="_blank" rel="noopener">無料の改善メモを頼む</a><small>メールでも受け付けています：<a href="mailto:nokisakisupport@gmail.com">nokisakisupport@gmail.com</a></small></div></article></div>
+</main>
+<footer><div class="wrap"><span>© のきさき　<a href="mailto:nokisakisupport@gmail.com">nokisakisupport@gmail.com</a></span><span>写真：Unsplash</span></div></footer>
+
+</body>
+</html>
